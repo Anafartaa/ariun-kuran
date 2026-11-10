@@ -39,7 +39,7 @@ kb:"Гар",words:"Үгээр",root:"Язгуур",lemma:"Үгийн үндэс"
 pos:{n:"нэр үг",v:"үйл үг",p:"сул үг",k:"оноосон нэр"},more:"Цааш нь",back:"Буцах",
 lessons:"Хичээлүүд",slide:"Слайд",prev:"Өмнөх",next:"Дараах",iso:"Ганцаар",ini:"Эхэнд",med:"Дунд",fin:"Төгсгөлд",
 src:"Эх сурвалж",loading:"Ачаалж байна…",
-play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
+plMin:"Жижигрүүлэх",plMax:"Томруулах",capT:"Орчуулгыг доор харуулах",play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
 plist:"Сонсох жагсаалт",plMake:"Жагсаалт үүсгэх",plFav:"Хадгалсан жагсаалтууд",plName:"Жагсаалтын нэр",plFrom:"Эхлэх",plTo:"Дуусах",plEmpty:"Юу ч сонгоогүй байна",plAyR:"Айлдварын хүрээ",
 saveT:"Хадгалах",svPage:"Энэ хуудсыг хадгалах",svAyah:"Сонгосон айлдварыг хадгалах",svSurah:"Энэ сурег хадгалах",svJuz:"Энэ жузыг хадгалах",svDone:"Хадгалагдлаа",tPages:"Хуудас",tAyahs:"Айлдвар",tSurahs:"Суре",tJuzs:"Жуз",
 exWord:"Word файл",exExcel:"Excel (CSV) файл",share:"Хуваалцах",shared:"Холбоос хуулагдлаа",
@@ -70,7 +70,7 @@ kb:"Klavye",words:"Kelime kelime",root:"Kök",lemma:"Kelime kökü (lemma)",occ:
 pos:{n:"isim",v:"fiil",p:"harf",k:"özel isim"},more:"Devamı",back:"Geri",
 lessons:"Dersler",slide:"Slayt",prev:"Önceki",next:"Sonraki",iso:"Tek",ini:"Başta",med:"Ortada",fin:"Sonda",
 src:"Kaynaklar",loading:"Yükleniyor…",
-play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
+plMin:"Küçült",plMax:"Büyüt",capT:"Meali altta göster",play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
 plist:"Dinleme listesi",plMake:"Liste oluştur",plFav:"Favori listeler",plName:"Liste adı",plFrom:"Başlangıç",plTo:"Bitiş",plEmpty:"Hiçbir şey seçilmedi",plAyR:"Ayet aralığı",
 saveT:"Kaydet",svPage:"Mevcut sayfayı kaydet",svAyah:"Seçili ayeti kaydet",svSurah:"Mevcut sureyi kaydet",svJuz:"Mevcut cüzü kaydet",svDone:"Kaydedildi",tPages:"Sayfalar",tAyahs:"Ayetler",tSurahs:"Sureler",tJuzs:"Cüzler",
 exWord:"Word dosyası",exExcel:"Excel (CSV) dosyası",share:"Paylaş",shared:"Bağlantı kopyalandı",
@@ -101,7 +101,7 @@ kb:"Keyboard",words:"Word by word",root:"Root",lemma:"Lemma",occ:"times",noRoot:
 pos:{n:"noun",v:"verb",p:"particle",k:"proper noun"},more:"More",back:"Back",
 lessons:"Lessons",slide:"Slides",prev:"Previous",next:"Next",iso:"Isolated",ini:"Initial",med:"Medial",fin:"Final",
 src:"Sources",loading:"Loading…",
-play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
+plMin:"Minimize",plMax:"Expand",capT:"Show translation below",play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
 plist:"Playlist",plMake:"Create list",plFav:"Saved lists",plName:"List name",plFrom:"From",plTo:"To",plEmpty:"Nothing selected",plAyR:"Verse range",
 saveT:"Save",svPage:"Save this page",svAyah:"Save selected verse",svSurah:"Save this surah",svJuz:"Save this juz",svDone:"Saved",tPages:"Pages",tAyahs:"Verses",tSurahs:"Surahs",tJuzs:"Juz",
 exWord:"Word file",exExcel:"Excel (CSV) file",share:"Share",shared:"Link copied",
@@ -119,7 +119,7 @@ keys:[["← / →","Next / previous page"],["Space","Play / pause"],["/","Search
 
 /* ---------- storage ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem('qk_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('qk_'+k,JSON.stringify(v))}catch(e){}}};
-const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'amiri',mfs:16,view:'quran',lang:'mn',meal:'',dbl:true,flip:true,rec:'ar.hudhaify',rate:1,repA:1,repR:1,range:'all',follow:true};
+const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'amiri',mfs:16,view:'quran',lang:'mn',meal:'',dbl:true,flip:true,rec:'ar.hudhaify',rate:1,repA:1,repR:1,range:'all',follow:true,plMin:false,cap:true};
 let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';
 let SV=LS.get('sv',null);if(!SV){SV={p:[],a:LS.get('saved',[]),s:[],j:[]}}
 let NOTES=LS.get('notes',{}), BM=LS.get('bm',null), LAST=LS.get('last',1), PLS=LS.get('pls',[]);
@@ -142,7 +142,7 @@ async function idbGet(k){try{const db=await idb();return await new Promise(r=>{c
 async function idbSet(k,v){try{const db=await idb();await new Promise(r=>{const tx=db.transaction('kv','readwrite');tx.objectStore('kv').put(v,k);tx.oncomplete=r;tx.onerror=r})}catch(e){}}
 
 /* ---------- icons ---------- */
-const IC={menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',book:'<path d="M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5c-3-.5-6 0-8 1.5z"/><path d="M12 6v14.5"/>',list:'<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>',layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',bm:'<path d="M6 3h12v18l-6-4-6 4z"/>',star:'<path d="M12 3l2.8 6 6.2.6-4.8 4.2 1.4 6.2L12 16.8 6.4 20l1.4-6.2L3 9.6 9.2 9z"/>',note:'<path d="M5 3h10l4 4v14H5z"/><path d="M14 3v5h5M8 13h8M8 17h5"/>',copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h8"/>',set:'<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/>',fs:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',cl:'<path d="M15 5l-7 7 7 7"/>',cr:'<path d="M9 5l7 7-7 7"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4M12 17h.01"/>',check:'<path d="M5 12l5 5 9-10"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',up:'<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>',
+const IC={cdn:'<path d="M6 9l6 6 6-6"/>',cup:'<path d="M6 15l6-6 6 6"/>',cc:'<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M7 11h10M7 15h6"/>',menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',book:'<path d="M12 6c-2-1.5-5-2-8-1.5V19c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5c-3-.5-6 0-8 1.5z"/><path d="M12 6v14.5"/>',list:'<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>',layers:'<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',bm:'<path d="M6 3h12v18l-6-4-6 4z"/>',star:'<path d="M12 3l2.8 6 6.2.6-4.8 4.2 1.4 6.2L12 16.8 6.4 20l1.4-6.2L3 9.6 9.2 9z"/>',note:'<path d="M5 3h10l4 4v14H5z"/><path d="M14 3v5h5M8 13h8M8 17h5"/>',copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 012-2h8"/>',set:'<path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/>',fs:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',cl:'<path d="M15 5l-7 7 7 7"/>',cr:'<path d="M9 5l7 7-7 7"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4M12 17h.01"/>',check:'<path d="M5 12l5 5 9-10"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',up:'<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>',
 abc:'<path d="M4 18l4-12 4 12M5.5 14h5"/><path d="M14 6h3.5a2.5 2.5 0 010 5H14zM14 11h4a2.5 2.5 0 010 5h-4z"/>',dict:'<path d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3z"/><path d="M5 17a3 3 0 013-3h11"/><path d="M9 8h6"/>',tag:'<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/>',kb:'<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',sel:'<rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M15 17.5l2 2 3.5-4"/>',sv:'<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>',
 play:'<path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/>',pause:'<path d="M7 4.5h3.5v15H7zM13.5 4.5H17v15h-3.5z" fill="currentColor"/>',prevT:'<path d="M18 5v14l-9-7zM6 5v14"/>',nextT:'<path d="M6 5v14l9-7zM18 5v14"/>',dots:'<circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/>',share:'<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/>',mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/>',trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',head:'<path d="M4 15v-3a8 8 0 0116 0v3"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/>',rep:'<path d="M4 11V9a3 3 0 013-3h12M16 3l3 3-3 3M20 13v2a3 3 0 01-3 3H5M8 21l-3-3 3-3"/>',dl:'<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>'};
 const ic=(n,s)=>`<svg class="i" viewBox="0 0 24 24"${s?` style="width:${s}px;height:${s}px"`:''}>${IC[n]}</svg>`;
@@ -481,7 +481,7 @@ function playCur(allowBism){const i=PL.queue[PL.pos];if(i==null){stopPlay();retu
   PL.playing=true;setCur(i);renderPlayer();preloadNext();mediaMeta(i)}
 function preloadNext(){const n=PL.queue[PL.pos+1];if(n!=null)try{PRE.src=ayURL(n)}catch(e){}}
 function setCur(i){const prev=PL.cur;PL.cur=i;document.querySelectorAll('#v-read .pl').forEach(e=>e.classList.remove('pl'));
-  if(VIEW==='read'){if(!onPage(i)&&S.follow){goPage(P[i],null,false);return}document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>{e.classList.add('pl');if(S.follow){const r=e.getBoundingClientRect();if(r.top<70||r.bottom>innerHeight-140)e.scrollIntoView({block:'center',behavior:'smooth'})}})}}
+  if(VIEW==='read'){if(!onPage(i)&&S.follow){goPage(P[i],null,false);return}document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>{e.classList.add('pl');if(S.follow){const r=e.getBoundingClientRect(),cp=$('plcap'),lim=innerHeight-(cp&&cp.classList.contains('on')?cp.offsetHeight+60:140);if(r.top<70||r.bottom>lim)e.scrollIntoView({block:'center',behavior:'smooth'})}})}}
 AU.onended=()=>{if(PL.inBism){PL.inBism=false;const i=PL.queue[PL.pos];AU.src=ayURL(i);AU.playbackRate=S.rate;AU.play().catch(()=>{});return}
   PL.ayCnt++;if(PL.ayCnt<repN(S.repA)){AU.currentTime=0;AU.play().catch(()=>{});return}
   PL.ayCnt=0;PL.pos++;
@@ -499,13 +499,29 @@ function skip(d){if(!PL.queue.length)return;PL.pos=Math.max(0,Math.min(PL.queue.
 function mediaMeta(i){try{if('mediaSession' in navigator){const [s,a]=sa(i);navigator.mediaSession.metadata=new MediaMetadata({title:`${sn(s)} ${s}:${a}`,artist:recName(S.rec),album:t('app')});
   navigator.mediaSession.setActionHandler('play',()=>togglePlay());navigator.mediaSession.setActionHandler('pause',()=>togglePlay());
   navigator.mediaSession.setActionHandler('previoustrack',()=>skip(-1));navigator.mediaSession.setActionHandler('nexttrack',()=>skip(1))}}catch(e){}}
+function renderCap(){const el=$('plcap');if(!el)return;
+  const i=PL.cur;let txt='';if(PL.open&&S.cap&&i>=0){const m=curMeal();txt=PL.inBism?(m&&m.bism)||'':mealTxt(i)}
+  if(!txt){el.classList.remove('on');el.innerHTML='';el.dataset.k='';return}
+  const [s,a]=sa(i);const k=(PL.inBism?'b':'')+i;
+  if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="cref">${PL.inBism?'بِسۡمِ ٱللَّهِ':`${esc(sn(s))} ${s}:${a}`}</div><div class="ctx" lang="mn">${esc(txt)}</div>`;el.scrollTop=0;
+    el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
+  el.classList.add('on')}
 function renderPlayer(){const el=$('player');if(!el)return;
   ['mbPlay','playTB'].forEach(id=>{const b=$(id);if(b)b.innerHTML=ic(PL.playing?'pause':'play')});
-  document.body.classList.toggle('plopen',PL.open);
-  if(!PL.open){el.classList.remove('on');return}
+  document.body.classList.toggle('plopen',PL.open);document.body.classList.toggle('plmin',PL.open&&!!S.plMin);
+  renderCap();
+  if(!PL.open){el.classList.remove('on','min');return}
   const i=PL.cur>=0?PL.cur:(SEL>=0?SEL:PFIRST[PAGE]);const [s,a]=sa(i);
+  if(S.plMin){
+    el.innerHTML=`<div class="plprog thin"><i id="plbar"></i></div><div class="plmini"><button class="ib" data-act="plMax" aria-label="${t('plMax')}" title="${t('plMax')}">${ic('cup',18)}</button>
+    <span class="plt"><b>${esc(sn(s))} ${s}:${a}</b></span>
+    <button class="ib" data-act="plPrev" aria-label="${t('prev')}">${ic('nextT',18)}</button><button class="ib big" data-act="plToggle" aria-label="${t('play')}">${ic(PL.playing?'pause':'play',20)}</button><button class="ib" data-act="plNext" aria-label="${t('next')}">${ic('prevT',18)}</button>
+    <button class="ib${S.cap?' on':''}" data-act="plCap" aria-pressed="${S.cap}" aria-label="${t('capT')}" title="${t('capT')}">${ic('cc',18)}</button>
+    <button class="ib" data-act="plClose" aria-label="${t('close')}">${ic('x',16)}</button></div>`;
+    el.classList.add('on','min');if(AU.duration)$('plbar').style.width=(AU.currentTime/AU.duration*100)+'%';return}
+  el.classList.remove('min');
   const reps=['1','2','3','5','10','inf'];const repLab=v=>v==='1'?t('none'):v==='inf'?t('inf'):v+'×';
-  el.innerHTML=`<div class="plhd"><span class="plt">${ic('head',16)} <b>${esc(sn(s))} ${s}:${a}</b>${PL.inBism?' · بِسۡمِ ٱللَّهِ':''}</span><button class="ib" data-act="plClose" aria-label="${t('close')}">${ic('x',16)}</button></div>
+  el.innerHTML=`<div class="plhd"><span class="plt">${ic('head',16)} <b>${esc(sn(s))} ${s}:${a}</b>${PL.inBism?' · بِسۡمِ ٱللَّهِ':''}</span><span class="plhb"><button class="ib" data-act="plMin" aria-label="${t('plMin')}" title="${t('plMin')}">${ic('cdn',18)}</button><button class="ib" data-act="plClose" aria-label="${t('close')}">${ic('x',16)}</button></span></div>
   <div class="plprog"><i id="plbar"></i></div>
   <div class="plctl"><button class="ib" data-act="plPrev" aria-label="${t('prev')}">${ic('nextT')}</button><button class="ib big" data-act="plToggle" aria-label="${t('play')}">${ic(PL.playing?'pause':'play',26)}</button><button class="ib" data-act="plNext" aria-label="${t('next')}">${ic('prevT')}</button></div>
   <div class="plopts">
@@ -514,7 +530,8 @@ function renderPlayer(){const el=$('player');if(!el)return;
   <label>${t('rangeT')}<select id="plRange">${[['page','rgPage'],['surah','rgSurah'],['all','rgAll']].map(o=>`<option value="${o[0]}"${S.range===o[0]?' selected':''}>${t(o[1])}</option>`).join('')}</select></label>
   <label>${t('repAyah')}<select id="plRepA">${reps.map(v=>`<option value="${v}"${String(S.repA)===v?' selected':''}>${repLab(v)}</option>`).join('')}</select></label>
   <label>${t('repRange')}<select id="plRepR">${reps.map(v=>`<option value="${v}"${String(S.repR)===v?' selected':''}>${repLab(v)}</option>`).join('')}</select></label>
-  <label class="chk"><input type="checkbox" id="plFol"${S.follow?' checked':''}> ${t('follow')}</label></div>
+  <label class="chk"><input type="checkbox" id="plFol"${S.follow?' checked':''}> ${t('follow')}</label>
+  <label class="chk"><input type="checkbox" id="plCapC"${S.cap?' checked':''}> ${t('capT')}</label></div>
   <div class="btns" style="margin-top:8px;justify-content:flex-start"><button class="btn s" data-act="plList">${ic('list',16)} ${t('plMake')}</button></div>`;
   el.classList.add('on');
   $('plRec').onchange=e=>{S.rec=e.target.value;applySet();if(PL.cur>=0){const was=PL.playing;playCur(false);if(!was)AU.pause()}};
@@ -523,6 +540,7 @@ function renderPlayer(){const el=$('player');if(!el)return;
   $('plRepA').onchange=e=>{S.repA=e.target.value;applySet()};
   $('plRepR').onchange=e=>{S.repR=e.target.value;applySet()};
   $('plFol').onchange=e=>{S.follow=e.target.checked;applySet()};
+  $('plCapC').onchange=e=>{S.cap=e.target.checked;applySet();renderCap()};
   if(AU.duration){$('plbar').style.width=(AU.currentTime/AU.duration*100)+'%'}
 }
 let PLT='s';
@@ -730,6 +748,8 @@ document.addEventListener('click',e=>{
     else if(a==='install'){if(DEFERRED_INSTALL){DEFERRED_INSTALL.prompt();DEFERRED_INSTALL=null;if(VIEW==='home')renderHome()}}
     else if(a==='plToggle')togglePlay();else if(a==='plPrev')skip(-1);else if(a==='plNext')skip(1);
     else if(a==='plClose'){AU.pause();PL.playing=false;PL.open=false;renderPlayer()}
+    else if(a==='plMin'||a==='plMax'){S.plMin=a==='plMin';applySet();renderPlayer()}
+    else if(a==='plCap'){S.cap=!S.cap;applySet();renderPlayer()}
     else if(a==='plList')playlistModal();
     else if(a==='plGo'){const q=plCollect();if(!q.length){toast(t('plEmpty'));return}closeAll();playQueue(q,0)}
     else if(a==='plSave'){const q=plCollect();if(!q.length){toast(t('plEmpty'));return}const nm=($('plnm').value||'').trim()||`${t('plist')} ${PLS.length+1}`;PLS.push({n:nm,q});LS.set('pls',PLS);playlistModal()}

@@ -28,6 +28,11 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Yayın: GitHub Pages (`.github/workflows/pages.yml`, `site/` yayınlanır). Site herkese açık adreste olur;
   arama motorlarına kapalı (`robots.txt`, `noindex`). PDF depoya konmaz (.gitignore).
 
+## v6: oynatıcı (10.11.2026)
+- Oynatıcı küçültülebilir (`S.plMin`, ⌄ düğmesi): sağ altta ince çubuk (ayet, önceki/oynat/sonraki, alt yazı, kapat); ⌃ ile büyür.
+- Meal alt yazısı (`S.cap`, varsayılan açık; `#plcap`, `renderCap`): çalan ayetin meali altta, sesle eşzamanlı; Besmele çalarken `m.bism`.
+  Metin yalnız `mealTxt` (meals.json) — yeni metin yok. Telefonda büyük oynatıcı açıkken gizli. Takip kaydırması şeridin üstünde durur.
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.
