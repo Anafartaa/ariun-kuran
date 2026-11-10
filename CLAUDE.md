@@ -32,7 +32,10 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Oynatıcı küçültülebilir (`S.plMin`, ⌄ düğmesi): sağ altta ince çubuk (ayet, önceki/oynat/sonraki, alt yazı, kapat); ⌃ ile büyür.
 - Meal alt yazısı (`S.cap`, varsayılan açık; `#plcap`, `renderCap`): çalan ayetin meali altta, sesle eşzamanlı; Besmele çalarken `m.bism`.
   Metin yalnız `mealTxt` (meals.json) — yeni metin yok. Telefonda büyük oynatıcı açıkken gizli. Takip kaydırması şeridin üstünde durur.
-- Kur'an fontları: Amiri Quran (varsayılan), Scheherazade New, Amiri. **Noto Naskh Arabic çıkarıldı**: Tanzil Osmanî metinde
+- **Akan metinde mushaf hattı** (`S.font='qcf'`, varsayılan; ayarda "Mushaf (KFGQPC)"): her kelime `mushaf/pages` + QCF sayfa fontundaki
+  basılı glifle (`upgradeFlow`, `qfHTML`, `QW`); ayet sonraki sayfaya taşarsa iki sayfa fontu birlikte. Besmele QCF_BSML. Önizlemede (INL) yok → Amiri Quran.
+- Varsayılan tek sayfa (`dbl:false`); çift sayfa ayardan açılır. `setV<2` olan kayıtlı ayarlar bir kez qcf + tek sayfaya geçirildi.
+- Diğer Kur'an fontları: Amiri Quran, Scheherazade New, Amiri. **Noto Naskh Arabic çıkarıldı**: Tanzil Osmanî metinde
   iklab mimini (U+06E2) üstünle tek işarete birleştiriyor (ör. 3:49 طَيۡرَۢا tenvin gibi görünüyor). Kayıtlı 'naskh' → 'sch' (`FONTS_OK`).
 
 ## Ses ve izinler (10.11.2026)

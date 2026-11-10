@@ -119,9 +119,10 @@ keys:[["← / →","Next / previous page"],["Space","Play / pause"],["/","Search
 
 /* ---------- storage ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem('qk_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('qk_'+k,JSON.stringify(v))}catch(e){}}};
-const FONTS_OK=['amiri','sch','amiri2'];
-const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'amiri',mfs:16,view:'quran',lang:'mn',meal:'',dbl:true,flip:true,rec:'ar.hudhaify',rate:1,repA:1,repR:1,range:'all',follow:true,plMin:false,cap:true};
-let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';if(!FONTS_OK.includes(S.font))S.font='sch';
+const FONTS_OK=['qcf','amiri','sch','amiri2'];
+const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'qcf',mfs:16,view:'quran',lang:'mn',meal:'',dbl:false,flip:true,rec:'ar.hudhaify',rate:1,repA:1,repR:1,range:'all',follow:true,plMin:false,cap:true};
+let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';if(!FONTS_OK.includes(S.font))S.font='qcf';
+/* v6 tek seferlik: mushaf hattı ve tek sayfa yeni varsayılan */if((S.setV|0)<2){S.font='qcf';S.dbl=false;S.setV=2}
 let SV=LS.get('sv',null);if(!SV){SV={p:[],a:LS.get('saved',[]),s:[],j:[]}}
 let NOTES=LS.get('notes',{}), BM=LS.get('bm',null), LAST=LS.get('last',1), PLS=LS.get('pls',[]);
 let READ=LS.get('read','');
@@ -132,8 +133,8 @@ const t=k=>(T[S.lang]||T.mn)[k]??T.mn[k]??k;
 const sn=s=>((NM[S.lang]&&NM[S.lang][s-1])||NM.mn[s-1]);
 const L=o=>o?(o[S.lang]||o.mn||o.tr||''):'';
 /* yalnız Kur'an imlasını (Tanzil Osmanî: ۡ ۢ ۥ ۦ ٰ ٓ) doğru dizen fontlar; Noto Naskh iklab mimini üstünle birleştirdiği için çıkarıldı */
-const FONTS={amiri:"'Amiri Quran','Scheherazade New',serif",sch:"'Scheherazade New',serif",amiri2:"'Amiri',serif"};
-const FONTN={amiri:'Amiri Quran',sch:'Scheherazade New',amiri2:'Amiri'};
+const FONTS={qcf:"'Amiri Quran','Scheherazade New',serif",amiri:"'Amiri Quran','Scheherazade New',serif",sch:"'Scheherazade New',serif",amiri2:"'Amiri',serif"};
+const FONTN={qcf:'Mushaf (KFGQPC)',amiri:'Amiri Quran',sch:'Scheherazade New',amiri2:'Amiri'};
 
 /* ---------- meals ---------- */
 let MEALS=[];const MERGED={};
@@ -228,7 +229,7 @@ function surahHead(s){
   let h=`<div class="sban"><div class="nm">سُورَةُ ${D.an[s-1]}</div></div><div class="smeta">${M(`${s}. ${esc(sn(s))}`,`${C[s-1]} ${t('ayahs')}`,placeName(s),ORD[s-1]?ORD[s-1]+' '+t('revOrd'):'')}</div>`;
   if(mv&&m&&m.lang==='mn')h+=`<div class="smeal">${D.r[s-1]==='M'?'Мекке':'Мадина'}-д илгээгдсэн. ${C[s-1]} айлдвар.</div>`;
   h+=`<div class="sact"><button class="chip sm" data-act="playSurah" data-s="${s}">${ic('play',14)} ${t('listenSurah')}</button></div>`;
-  if(s!==1&&s!==9){h+=`<div class="bsm">${BISM}</div>`;if(mv&&m&&m.bism)h+=`<div class="bsmm">${esc(m.bism)}</div>`}
+  if(s!==1&&s!==9){h+=`<div class="bsm" data-qfb="1">${BISM}</div>`;if(mv&&m&&m.bism)h+=`<div class="bsmm">${esc(m.bism)}</div>`}
   return h;
 }
 function mealTxt(i,m){m=m||curMeal();if(MERGED[i]){const g=MERGED[i];return m&&m.arr[gi(g[0],g[1])]?'('+g[0]+':'+g[1]+'–'+g[2]+') '+m.arr[gi(g[0],g[1])]:''}return m&&m.arr[i]?m.arr[i]:''}
@@ -240,12 +241,12 @@ function pageBody(pg){
   else if(S.view==='quran'){
     let txt='';
     for(let i=a;i<b;i++){const [s,ay]=sa(i);if(ay===1){if(txt)body+=`<div class="ar">${txt}</div>`;txt='';body+=surahHead(s)}
-      txt+=`<span class="ay${cls(i)}" data-i="${i}">${D.t[i]} <span class="am">${arD(ay)}</span></span> `}
+      txt+=`<span class="ay${cls(i)}" data-i="${i}" data-qf="${i}">${D.t[i]} <span class="am">${arD(ay)}</span></span> `}
     if(txt)body+=`<div class="ar">${txt}</div>`;
   }else{
     let list='';const k=S.view==='both'?'mlist both':S.view==='cmp'?'mlist cmpl':'mlist';
     for(let i=a;i<b;i++){const [s,ay]=sa(i);if(ay===1){if(list)body+=`<div class="${k}">${list}</div>`;list='';body+=surahHead(s)}
-      if(S.view==='both')list+=`<div class="it${cls(i)}" data-i="${i}"><div class="ar">${D.t[i]} <span class="am">${arD(ay)}</span></div><div class="row"><span class="num">${s}:${ay}</span><div class="mt">${mealOf(i)}</div></div></div>`;
+      if(S.view==='both')list+=`<div class="it${cls(i)}" data-i="${i}"><div class="ar" data-qf="${i}">${D.t[i]} <span class="am">${arD(ay)}</span></div><div class="row"><span class="num">${s}:${ay}</span><div class="mt">${mealOf(i)}</div></div></div>`;
       else if(false)list+=`<div class="it${cls(i)}" data-i="${i}"><div class="ar">${D.t[i]} <span class="am">${arD(ay)}</span></div>${MEALS.length?MEALS.map(m=>`<div class="mrow"><span class="tag" title="${esc(m.name)}">${esc(m.name)}</span><div class="mt">${m.arr[i]?esc(m.arr[i]):'<span class="nomeal">—</span>'}</div></div>`).join(''):`<div class="mrow"><div class="mt nomeal">${t('noMeal')}</div></div>`}</div>`;
       else list+=`<div class="it${cls(i)}" data-i="${i}"><span class="num">${ay}</span><div class="mt">${mealOf(i)}</div></div>`}
     if(list)body+=`<div class="${k}">${list}</div>`;
@@ -269,6 +270,22 @@ async function fillQCF(el,pg){try{const [L]=await Promise.all([getQP(pg),getQF(p
   [pg+1,pg-1,pg+2].forEach(x=>{if(x>=1&&x<=604){getQP(x).catch(()=>{});getQF(x).catch(()=>{})}});
   if(PL.cur>=0&&S.follow&&onPage(PL.cur)){const e=el.querySelector('.pl');if(e)e.scrollIntoView({block:'center'})}
   }catch(e){QCF_FAIL=true;renderPage()}}
+/* akan metinde mushaf hattı: her kelime basılı Medine mushafındaki QCF glifiyle (ayet bir sonraki sayfaya taşabilir) */
+const QW={},QWP={};const useQF=()=>QCF_OK&&!QCF_FAIL&&S.font==='qcf';
+function idxQP(pg,L){if(QWP[pg])return;QWP[pg]=1;const seen=new Set();
+  for(const l of L)if(l[0]==='t')for(const w of l[1]){(QW[w[0]]||(QW[w[0]]=[])).push([pg,w[1]]);seen.add(w[0])}
+  seen.forEach(i=>QW[i].sort((x,y)=>x[0]-y[0]))}
+function qfHTML(i){const ws=QW[i];if(!ws||!ws.length)return null;let h='',cp=0,buf=[];
+  const flush=()=>{if(buf.length)h+=`<span style="font-family:QCF${cp}">${buf.join(' ')}</span> `;buf=[]};
+  for(const [p,g] of ws){if(p!==cp){flush();cp=p}buf.push(g.includes(' ')?`<span class="qn">${g}</span>`:g)}flush();return h.trim()}
+async function upgradeFlow(root){const els=root.querySelectorAll('[data-qf]');if(!els.length)return;
+  const idx=[...els].map(e=>+e.dataset.qf);const pages=new Set();idx.forEach(i=>{pages.add(P[i]);if(P[i]<604)pages.add(P[i]+1)});
+  try{await Promise.all([...pages].map(pg=>Promise.all([getQP(pg),getQF(pg)]).then(([L])=>idxQP(pg,L))));
+    const bs=root.querySelectorAll('[data-qfb]');if(bs.length){await getQB();bs.forEach(e=>{e.classList.add('qbs');e.style.fontFamily='QCFBS';e.textContent='#"!'})}
+  }catch(e){return}
+  if(!root.isConnected)return;
+  els.forEach(e=>{const h=qfHTML(+e.dataset.qf);if(h){e.innerHTML=h;e.classList.add('qfd')}});
+  root.classList.add('qflow')}
 function renderPage(){
   const dbl=isDbl();if(dbl&&PAGE%2===0)PAGE--;
   const rd=isRead(PAGE);
@@ -277,6 +294,7 @@ function renderPage(){
   <div class="pfoot"><button class="chip${rd?' on':''}" data-act="read">${ic('check',18)} ${rd?t('isRead'):t('markRead')}</button><button class="chip${BM&&BM.p===PAGE?' on':''}" data-act="bm">${ic('bm',18)} ${t('bmHere')}</button><button class="chip${MSEL?' on':''}" data-act="multi">${ic('sel',18)} ${t('multi')}</button><button class="chip" data-act="saveMenu">${ic('star',18)} ${t('saveT')}</button><span class="chip" style="cursor:default">${t('page')} ${PAGE}${dbl&&PAGE<604?'–'+(PAGE+1):''} ${t('of')} 604 · ${t('juz')} ${J[PFIRST[PAGE]]}</span></div>`;
   FLIPDIR=0;
   document.querySelectorAll('#v-read [data-qp]').forEach(el=>fillQCF(el,+el.dataset.qp));
+  if(useQF())upgradeFlow($('pgwrap'));
   if(PL.cur>=0&&S.follow&&onPage(PL.cur))requestAnimationFrame(()=>{const e=document.querySelector('#v-read .pl');if(e)e.scrollIntoView({block:'center'})});
   syncSel();
 }
@@ -602,14 +620,14 @@ function settingsModal(){
   <div class="lbl">${t('theme')}</div><div class="themes">${th.map(x=>`<button data-th="${x[0]}" class="${S.theme===x[0]?'on':''}"><span class="sw" style="background:${x[1]}"></span>${t(x[0])}</button>`).join('')}</div>
   <div class="lbl">${t('quran')}</div><div class="cols"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('afs')}</div><div class="step"><button data-st="fs:-10">−</button><span>${S.fs}%</span><button data-st="fs:10">+</button></div></div>
   <div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('alh')}</div><div class="step"><button data-st="lh:-0.1">−</button><span>${(+S.lh).toFixed(1)}</span><button data-st="lh:0.1">+</button></div></div></div>
-  <div class="muted" style="font-size:13px;margin:12px 0 6px">${t('afont')}</div><select id="fontSel" style="width:100%">${Object.keys(FONTN).map(k=>`<option value="${k}"${S.font===k?' selected':''}>${FONTN[k]}</option>`).join('')}</select>
+  <div class="muted" style="font-size:13px;margin:12px 0 6px">${t('afont')}</div><select id="fontSel" style="width:100%">${Object.keys(FONTN).filter(k=>k!=='qcf'||QCF_OK).map(k=>`<option value="${k}"${S.font===k?' selected':''}>${FONTN[k]}</option>`).join('')}</select>
   ${QCF_OK?`<div style="margin-top:12px"><div class="muted" style="font-size:13px;margin-bottom:6px">${t('qcfL')}</div>${tog('qcf')}</div>`:''}
   <div class="cols" style="margin-top:12px"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('dblp')}</div>${tog('dbl')}</div><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('flip')}</div>${tog('flip')}</div></div>
   <div class="lbl">${t('meal')}</div><div class="cols"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('mfs')}</div><div class="step"><button data-st="mfs:-1">−</button><span>${S.mfs}px</span><button data-st="mfs:1">+</button></div></div>
 </div>
   <div class="btns" style="justify-content:space-between"><button class="btn s" data-act="backup">${ic('sv',16)} ${t('backup')}</button><button class="btn s" data-act="reset">${t('reset')}</button></div>
   <div class="btns" style="justify-content:flex-start"><button class="btn d" data-act="wipe">${ic('trash',16)} ${t('wipe')}</button></div>`);
-  $('fontSel').onchange=e=>{S.font=e.target.value;applySet()};
+  $('fontSel').onchange=e=>{S.font=e.target.value;applySet();if(VIEW==='read')renderPage()};
 }
 function copyModal(){
   const hasSel=MSEL&&MSEL.size||SEL>=0;const lab=MSEL&&MSEL.size?`${MSEL.size} ${t('nsel')}`:SEL>=0?sa(SEL).join(':'):'';

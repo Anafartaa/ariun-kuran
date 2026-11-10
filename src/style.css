@@ -368,3 +368,10 @@ body.plopen .wrap{padding-bottom:300px}
   .plmini .plt{flex:1;min-width:0;max-width:none}
   body.plopen .wrap{padding-bottom:420px}
 }
+
+/* ---------- akan metinde mushaf hattı (QCF) ---------- */
+.qflow .ar{word-spacing:.12em;font-size:calc(var(--arfs)*var(--ms)*1.12)}
+.qflow .qn{white-space:nowrap}
+.qflow .ay.qfd{padding:0 .06em}
+.qflow .both .it .ar,.qflow .mlist .ar{line-height:calc(var(--arlh)*.95)}
+.bsm.qbs{direction:ltr;unicode-bidi:bidi-override;font-size:calc(var(--arfs)*var(--ms)*1.05)}
