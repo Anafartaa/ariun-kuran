@@ -32,6 +32,8 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Oynatıcı küçültülebilir (`S.plMin`, ⌄ düğmesi): sağ altta ince çubuk (ayet, önceki/oynat/sonraki, alt yazı, kapat); ⌃ ile büyür.
 - Meal alt yazısı (`S.cap`, varsayılan açık; `#plcap`, `renderCap`): çalan ayetin meali altta, sesle eşzamanlı; Besmele çalarken `m.bism`.
   Metin yalnız `mealTxt` (meals.json) — yeni metin yok. Telefonda büyük oynatıcı açıkken gizli. Takip kaydırması şeridin üstünde durur.
+- Kur'an fontları: Amiri Quran (varsayılan), Scheherazade New, Amiri. **Noto Naskh Arabic çıkarıldı**: Tanzil Osmanî metinde
+  iklab mimini (U+06E2) üstünle tek işarete birleştiriyor (ör. 3:49 طَيۡرَۢا tenvin gibi görünüyor). Kayıtlı 'naskh' → 'sch' (`FONTS_OK`).
 
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):

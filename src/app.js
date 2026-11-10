@@ -119,8 +119,9 @@ keys:[["← / →","Next / previous page"],["Space","Play / pause"],["/","Search
 
 /* ---------- storage ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem('qk_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('qk_'+k,JSON.stringify(v))}catch(e){}}};
+const FONTS_OK=['amiri','sch','amiri2'];
 const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'amiri',mfs:16,view:'quran',lang:'mn',meal:'',dbl:true,flip:true,rec:'ar.hudhaify',rate:1,repA:1,repR:1,range:'all',follow:true,plMin:false,cap:true};
-let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';
+let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';if(!FONTS_OK.includes(S.font))S.font='sch';
 let SV=LS.get('sv',null);if(!SV){SV={p:[],a:LS.get('saved',[]),s:[],j:[]}}
 let NOTES=LS.get('notes',{}), BM=LS.get('bm',null), LAST=LS.get('last',1), PLS=LS.get('pls',[]);
 let READ=LS.get('read','');
@@ -130,8 +131,9 @@ function setRead(p,v){let a=READ.padEnd(605,'0').split('');a[p]=v?'1':'0';READ=a
 const t=k=>(T[S.lang]||T.mn)[k]??T.mn[k]??k;
 const sn=s=>((NM[S.lang]&&NM[S.lang][s-1])||NM.mn[s-1]);
 const L=o=>o?(o[S.lang]||o.mn||o.tr||''):'';
-const FONTS={amiri:"'Amiri Quran','Scheherazade New',serif",sch:"'Scheherazade New',serif",naskh:"'Noto Naskh Arabic',serif",amiri2:"'Amiri',serif"};
-const FONTN={amiri:'Amiri Quran',sch:'Scheherazade New',naskh:'Noto Naskh Arabic',amiri2:'Amiri'};
+/* yalnız Kur'an imlasını (Tanzil Osmanî: ۡ ۢ ۥ ۦ ٰ ٓ) doğru dizen fontlar; Noto Naskh iklab mimini üstünle birleştirdiği için çıkarıldı */
+const FONTS={amiri:"'Amiri Quran','Scheherazade New',serif",sch:"'Scheherazade New',serif",amiri2:"'Amiri',serif"};
+const FONTN={amiri:'Amiri Quran',sch:'Scheherazade New',amiri2:'Amiri'};
 
 /* ---------- meals ---------- */
 let MEALS=[];const MERGED={};
