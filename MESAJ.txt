@@ -1,0 +1,8 @@
+Bu zip, Moğolca Kur'an okuma sitesi projem (Ариун Куран). Zip'i aç, önce CLAUDE.md dosyasını baştan sona oku; projenin tüm durumu, kararlar ve kalan işler orada yazıyor. Benimle Türkçe konuş.
+
+Kurallar:
+- Meal sadece zip'teki "KUR'AN-I KERİM MOĞOLCA MEALİ - DİYANET.pdf" dosyasından gelir (data/meals.json). Meale kendin hiçbir şey çevirme ya da ekleme.
+- Sure adlarını değiştirme.
+- Kaynak kod src/ klasöründe. Mushaf fontları zip'te yok; README'deki komutla indir. Sonra "python3 build.py" ile site/ ve preview/ klasörlerini üret.
+
+İlk iş: ses bölümünde sadece web sitelerinde ücretsiz kullanıma açık hafızlar kalsın. Kral Fahd Kompleksi'nin (qurancomplex.gov.sa) web siteleri için ücretsiz kullanıma açtığı kayıtları öncelikle ekle. Her hafızın kaynağını ve kullanım iznini kontrol et, izni belirsiz olanları çıkar. Sonuçta hangi hafızların kaldığını ve neden kaldığını bana listele.
