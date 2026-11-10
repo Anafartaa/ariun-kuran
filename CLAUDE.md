@@ -23,7 +23,7 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Üst üste binmeler: sure kartuşu (`.sban` min-height + line-height 2.1), Besmele (`.bsm` line-height 2.15),
   ana sayfa başlığı (`.hero .ttl` line-height 2). Ana sayfa kartları eşit uzamıyor (`.two` align-items:start).
 - Ayraç noktaları önceki öğeye bağlı (`.smeta`, `.mt2`): satır başında yalnız nokta kalmıyor.
-- Çalan ayet vurgusu sade dolgu (kenar çizgisi yok). Telefon: alt çubuk okumada değilken ortalı; görünüm seçici 118px.
+- Çalan ayet vurgusu sade dolgu (kenar çizgisi yok); mushaf (QCF) görünümünde kutu yerine yazı rengi (`.qw.pl`). Telefon: alt çubuk okumada değilken ortalı; görünüm seçici 118px.
 - Ses yerelde/gerçek sitede çalışıyor (cdn.islamic.network, 206). claude.ai artifact'ında CSP yüzünden çalmaz.
 - Yayın: GitHub Pages (`.github/workflows/pages.yml`, `site/` yayınlanır). Site herkese açık adreste olur;
   arama motorlarına kapalı (`robots.txt`, `noindex`). PDF depoya konmaz (.gitignore).
@@ -52,7 +52,7 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 
 ## Kalan işler (kullanıcı adımı / dış veri gerekenler)
 - [ ] **Yayın izni**: Moğolca meal © Diyanet İşleri Başkanlığı — Dini Yayınlar GM, Yabancı Dil ve Lehçelerde Yayınlar Daire Bşk.
-- [ ] **Yayına alma**: `site/` klasörünü Netlify Drop'a sürükle (README).
+- [x] **Yayına alma**: GitHub Pages — https://anafartaa.github.io/ariun-kuran/ (Anafartaa/ariun-kuran, `main`'e push → otomatik yayın).
 - [ ] `CONTACT_EMAIL` (src/content.js).
 - [ ] **Türkiye mushafı sayfa düzeni**: kuran.diyanet.gov.tr verisi şifreli API'de (çözülmeyecek). Diyanet Bilgi İşlem / Dini Yayınlar'dan resmî olarak
       sayfa→ayet eşlemesi + mushaf fontu (ShaikhHamdullahMushaf) istenmeli; gelince `mushaf/pages` biçimine dönüştürülüp ikinci düzen olarak eklenir.
