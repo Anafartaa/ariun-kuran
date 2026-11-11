@@ -56,6 +56,11 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
   İhfâ/izhar/idğam/iklab/mim kuralları Medine imlasındaki işaretlere dayanır (sükûnsuz nûn/mîm, ۢ, ۡ). «الله» bitişik çizildiği için kelimenin tamamı boyanır.
 - Harf/kelime ses kaydı YOK (lisanslı kaynak bulunmadı); görüntüleyici bunu açıkça yazar. İlerleme: LS `elf`, konum: LS `elfpos`.
 
+## Geri hareketi (11.11.2026)
+- `setHash` artık geçmişe kayıt ekler (`pushState`): ekran, fihrist konusu, Elifba ders/alt sayfa; okurken sayfa çevirme eklemez (replace).
+- Pencere/alt menü/yan menü açılınca `ovOpened` bir kayıt ekler; geri hareketi önce onu kapatır. X ile kapatılınca `ovClosed` kaydı geri alır
+  (aynı adımda başka ekrana geçilirse kayıt yeni ekranla değiştirilir). `popstate` durumu (`navState`) geri yükler.
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.

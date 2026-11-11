@@ -178,7 +178,8 @@ function renderElifba(){stopSeq();LS.set('elfpos',{les:ELS.les,sub:ELS.sub});
   $('v-elifba').innerHTML=`<h2>${t('elifba')}</h2><div class="lay"><nav class="lnav">${curriculum()}</nav><div>
     <div class="eltabs">${sb.map((x,i)=>`<button data-sub="${i}" class="${i===ELS.sub?'on':''}">${subTitle(l,x)}</button>`).join('')}</div>${main}
     <div class="btns" style="justify-content:space-between;margin-top:14px"><button class="btn s" data-elf="back">${ic('cl',16)} ${t('prev')}</button><button class="btn" data-elf="fwd">${t('next')} ${ic('cr',16)}</button></div></div></div>`;
-  const on=document.querySelector('#v-elifba .lnav button.on');if(on&&innerWidth>900)on.scrollIntoView({block:'nearest'})}
+  const on=document.querySelector('#v-elifba .lnav button.on');if(on&&innerWidth>900)on.scrollIntoView({block:'nearest'});
+  if(VIEW==='elifba')setHash()}
 
 function elfStep(d){const sb=subsOf(ELIFBA[ELS.les]);let k=ELS.les,s=ELS.sub+d;
   if(s<0||s>=sb.length){do{k+=d}while(ELIFBA[k]&&ELIFBA[k].part);if(!ELIFBA[k])return;ELS.les=k;s=d>0?0:subsOf(ELIFBA[k]).length-1}

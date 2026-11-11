@@ -215,7 +215,26 @@ function show(v){
   ({home:renderHome,read:renderPage,surahs:renderSurahs,juz:renderJuz,search:renderSearch,saved:renderSaved,notes:renderNotes,help:renderHelp,elifba:renderElifba,topics:renderTopics,intro:renderIntro})[v]();
   setHash();scrollTo(0,0);
 }
-function setHash(){const h=VIEW==='read'?'p-'+PAGE:VIEW;try{history.replaceState(null,'','#'+h)}catch(e){}}
+/* tarayıcı geçmişi: telefonda soldan kaydırma / geri tuşu önceki ekrana döner.
+   Ekran, fihrist konusu, Elifba ders/alt sayfa değişimi yeni kayıt ekler; okurken sayfa çevirme eklemez.
+   Pencere/alt menü/yan menü açılınca bir kayıt eklenir; geri hareketi önce onu kapatır. */
+let NAVKEY='',RESTORING=false,OVPUSH=false,OVSTALE=false,SKIPPOP=false;
+const navKey=()=>VIEW==='read'?'read':VIEW==='topics'?'topics:'+(TOPIC?TOPIC.join('-'):''):VIEW==='elifba'?'elifba:'+ELS.les+':'+ELS.sub:VIEW;
+const navState=()=>({v:VIEW,p:PAGE,tp:TOPIC,els:VIEW==='elifba'?{les:ELS.les,sub:ELS.sub}:null});
+function setHash(){const h=VIEW==='read'?'p-'+PAGE:VIEW;const k=navKey();
+  try{if(OVSTALE||(history.state&&history.state.ov)){history.replaceState(navState(),'','#'+h);OVSTALE=false;OVPUSH=false}
+    else if(RESTORING||!NAVKEY||k===NAVKEY)history.replaceState(navState(),'','#'+h);
+    else history.pushState(navState(),'','#'+h)}catch(e){}
+  NAVKEY=k}
+function ovOpened(){if(OVPUSH)return;OVPUSH=true;if(OVSTALE){OVSTALE=false;return}try{history.pushState(Object.assign({},history.state||navState(),{ov:1}),'')}catch(e){}}
+function ovClosed(){if(!OVPUSH)return;OVPUSH=false;OVSTALE=true;
+  setTimeout(()=>{if(!OVSTALE)return;OVSTALE=false;try{if(history.state&&history.state.ov){SKIPPOP=true;history.back()}}catch(e){}},0)}
+const anyOv=()=>$('modal').classList.contains('on')||$('sheet').classList.contains('on')||$('side').classList.contains('open');
+addEventListener('popstate',e=>{if(SKIPPOP){SKIPPOP=false;return}
+  if(anyOv()){OVPUSH=false;OVSTALE=false;$('ov').classList.remove('on');$('sheet').classList.remove('on');$('modal').classList.remove('on');$('side').classList.remove('open');$('scrim').classList.remove('on');return}
+  OVPUSH=false;OVSTALE=false;const st=e.state;if(!st||!st.v||st.ov&&!st.v)return;
+  RESTORING=true;try{TOPIC=st.tp||null;if(st.els){ELS.les=st.els.les;ELS.sub=st.els.sub}
+    if(st.v==='read'){if(st.p)PAGE=st.p;show('read')}else show(st.v)}finally{RESTORING=false}});
 function goPage(p,sel,noFlip){p=Math.min(604,Math.max(1,p|0));if(isDbl())p=p%2?p:p-1;
   FLIPDIR=!noFlip&&VIEW==='read'&&S.flip?(p>PAGE?1:p<PAGE?-1:0):0;
   PAGE=p;SEL=sel==null?-1:sel;LAST=p;LS.set('last',p);if(VIEW!=='read')show('read');else{renderPage();setHash();if(SEL<0)scrollTo(0,0)}
@@ -569,8 +588,8 @@ function plCollect(){let q=[];
   return q}
 
 /* ---------- sheet & modal ---------- */
-function openOv(){$('ov').classList.add('on')}
-function closeAll(){$('ov').classList.remove('on');$('sheet').classList.remove('on');$('modal').classList.remove('on')}
+function openOv(){$('ov').classList.add('on');ovOpened()}
+function closeAll(){const was=$('modal').classList.contains('on')||$('sheet').classList.contains('on');$('ov').classList.remove('on');$('sheet').classList.remove('on');$('modal').classList.remove('on');if(was&&!$('side').classList.contains('open'))ovClosed()}
 function openSheet(i){
   SEL=i;document.querySelectorAll('.ay.sel,.it.sel,.qw.sel').forEach(e=>e.classList.remove('sel'));document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>e.classList.add('sel'));
   if(VIEW==='read')syncSel();
@@ -696,7 +715,7 @@ document.addEventListener('click',e=>{
   const lg=e.target.closest('[data-lg]');if(lg){const inMore=!!lg.closest('#modal .mgrid')||!$('fontSel');S.lang=lg.dataset.lg;applySet();buildChrome();show(VIEW);if($('modal').classList.contains('on')){if(document.querySelector('#modal .mgrid'))moreMenu();else settingsModal()}return}
   const cp=e.target.closest('[data-cp]');if(cp){const [sc,c]=cp.dataset.cp.split(':');doCopy(sc,c);closeAll();return}
   const ex=e.target.closest('[data-ex]');if(ex){const [kind,fmt]=ex.dataset.ex.split(':');doExport(kind,fmt);return}
-  const tp=e.target.closest('[data-topic]');if(tp){const v=tp.dataset.topic;TOPIC=v==='-'?null:v.split(':').map(Number);renderTopics();scrollTo(0,0);return}
+  const tp=e.target.closest('[data-topic]');if(tp){const v=tp.dataset.topic;TOPIC=v==='-'?null:v.split(':').map(Number);renderTopics();setHash();scrollTo(0,0);return}
   const pr=e.target.closest('[data-playrefs]');if(pr){playQueue(refIdx(pr.dataset.playrefs),0);return}
   if(elfClick(e))return;
   const st2=e.target.closest('[data-st2]');if(st2){STAB=st2.dataset.st2;renderSearch();return}
@@ -764,9 +783,9 @@ document.addEventListener('click',e=>{
     else if(VIEW==='read'||VIEW==='home'||di.matches('.sc'))goAyah(i);else openSheet(i);return}
 });
 $('ov').onclick=closeAll;
-$('menuB').onclick=()=>{$('side').classList.add('open');$('scrim').classList.add('on')};
+$('menuB').onclick=()=>{$('side').classList.add('open');$('scrim').classList.add('on');ovOpened()};
 $('scrim').onclick=closeSide;
-function closeSide(){$('side').classList.remove('open');$('scrim').classList.remove('on')}
+function closeSide(){const was=$('side').classList.contains('open');$('side').classList.remove('open');$('scrim').classList.remove('on');if(was)ovClosed()}
 $('selS').onchange=e=>goAyah(START[+e.target.value-1]);
 $('selA').onchange=e=>goAyah(gi(+$('selS').value,+e.target.value));
 $('selJ').onchange=e=>goAyah(JFIRST[+e.target.value]);
