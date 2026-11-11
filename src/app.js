@@ -462,31 +462,10 @@ function renderTopics(){
       return `<h3>${esc(L(cat.c))} <small class="muted">(${items.length})</small></h3><div class="grid">${items.map(([tp,k])=>`<button class="sc" data-topic="${ci}:${k}"><span class="tx"><b>${esc(tName(tp))}</b><small>${refIdx(tp[3]).length} ${t('ayahs')}</small></span>${ic('cr',16)}</button>`).join('')}</div>`}).join('')||`<div class="empty">${t('noRes')}</div>`};
     fill();$('tq').oninput=e=>{SF.tq=e.target.value;fill()};return}
   const [ci,k]=TOPIC;const tp=TOPICS[ci].t[k];const ids=refIdx(tp[3]);
-  $('v-topics').innerHTML=`<button class="chip" data-topic="-">${ic('cr',16)} ${t('back')}</button><div class="muted" style="margin-top:12px;font-size:13px">${esc(L(TOPICS[ci].c))}</div><h2 style="margin-top:2px">${esc(tName(tp))}</h2><p class="muted">${esc(refLabel(tp[3]))}</p><div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${tp[3]}">${ic('play',14)} ${t('play')}</button></div>`+ids.map(i=>resItem(i)).join('');
+  $('v-topics').innerHTML=`<button class="chip" data-topic="-">${ic('cl',16)} ${t('back')}</button><div class="muted" style="margin-top:12px;font-size:13px">${esc(L(TOPICS[ci].c))}</div><h2 style="margin-top:2px">${esc(tName(tp))}</h2><p class="muted">${esc(refLabel(tp[3]))}</p><div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${tp[3]}">${ic('play',14)} ${t('play')}</button></div>`+ids.map(i=>resItem(i)).join('');
 }
 
-/* ---------- elifba ---------- */
-let LES=1;
-function lessonList(){let n=0;return ELIFBA.map((l,k)=>l.part?`<div class="pt">${esc(L(l.part))}</div>`:`<button data-les="${k}" class="${k===LES?'on':''}"><span>${++n}</span>${esc(L(l.t))}</button>`).join('')}
-function lname(k){return (LNAME[S.lang]||LNAME.mn)[k]}
-function formsOf(ch){const z='‍';const nj=NONJOIN.includes(ch);return [ch, nj?ch:ch+z, nj?z+ch:z+ch+z, z+ch]}
-function renderElifba(){
-  const l=ELIFBA[LES];let body='';
-  if(l.type==='letters')body=`<div class="lgrid">${LETTERS.map((c,k)=>`<button class="lg" data-letter="${k}"><span class="gl">${c}</span><small>${esc(lname(k))}</small></button>`).join('')}</div>`;
-  else if(l.type==='forms')body=`<div style="overflow:auto"><table class="ftab"><tr><th></th><th>${t('iso')}</th><th>${t('ini')}</th><th>${t('med')}</th><th>${t('fin')}</th></tr>${LETTERS.map((c,k)=>{const f=formsOf(c);return `<tr><th>${esc(lname(k))}</th>${f.map(x=>`<td>${x}</td>`).join('')}</tr>`}).join('')}</table></div>`;
-  else if(l.type==='grid'){const items=LETTERS.filter(c=>!(l.skip||'').includes(c)).map(c=>(l.pre||'')+c+l.g);
-    body=`<div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-slide="0">${ic('fs',16)} ${t('slide')}</button></div><div class="lgrid">${items.map((x,k)=>`<button class="lg" data-slide="${k}">${x}</button>`).join('')}</div>`}
-  else if(l.type==='rule')body=`<div class="rulel">${l.l}</div><div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${l.refs}">${ic('play',14)} ${t('play')}</button></div>`+refIdx(l.refs).map(i=>resItem(i)).join('');
-  else if(l.type==='ayat')body=`<div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${l.refs}">${ic('play',14)} ${t('play')}</button></div>`+refIdx(l.refs).map(i=>resItem(i)).join('');
-  else if(l.type==='signs')body=`<div class="card">${signsHTML()}</div>`;
-  $('v-elifba').innerHTML=`<h2>${t('elifba')}</h2><div class="lay"><nav class="lnav">${lessonList()}</nav><div><div class="card" style="margin-bottom:12px"><b style="font-size:18px">${arIn(esc(L(l.t)))}</b><p class="mt" style="margin:8px 0 0">${arIn(esc(L(l.d)))}</p></div>${body}
-  <div class="btns" style="justify-content:space-between"><button class="btn s" data-lstep="-1">${ic('cl',16)} ${t('prev')}</button><button class="btn" data-lstep="1">${t('next')} ${ic('cr',16)}</button></div></div></div>`;
-}
-let SLIDE={items:[],k:0};
-function slideModal(){const x=SLIDE.items[SLIDE.k];
-  modal(`<div class="hd"><b>${SLIDE.k+1} / ${SLIDE.items.length}</b><button class="ib" data-act="close">${ic('x')}</button></div><div class="big">${x.c}</div>${x.n?`<div style="text-align:center;font-weight:600;font-size:18px">${esc(x.n)}</div>`:''}${x.f?`<table class="ftab" style="margin-top:10px"><tr><th>${t('iso')}</th><th>${t('ini')}</th><th>${t('med')}</th><th>${t('fin')}</th></tr><tr>${x.f.map(y=>`<td>${y}</td>`).join('')}</tr></table>`:''}
-  <div class="btns" style="justify-content:space-between"><button class="btn s" data-sl="-1">${ic('cr',16)} ${t('prev')}</button><button class="btn" data-sl="1">${t('next')} ${ic('cl',16)}</button></div>`)}
-
+/*@ELIFBA@*/
 /* ---------- audio player ---------- */
 const AU=new Audio();AU.preload='auto';const PRE=new Audio();PRE.preload='auto';
 const PL={queue:[],pos:0,playing:false,cur:-1,inBism:false,ayCnt:0,rgCnt:0,open:false,err:0};
@@ -504,7 +483,7 @@ function playCur(allowBism){const i=PL.queue[PL.pos];if(i==null){stopPlay();retu
   const p=AU.play();if(p&&p.catch)p.catch(err=>{if(err&&err.name==='NotAllowedError'){PL.playing=false;renderPlayer();return}});
   PL.playing=true;setCur(i);renderPlayer();preloadNext();mediaMeta(i)}
 function preloadNext(){const n=PL.queue[PL.pos+1];if(n!=null)try{PRE.src=ayURL(n)}catch(e){}}
-function setCur(i){const prev=PL.cur;PL.cur=i;document.querySelectorAll('#v-read .pl').forEach(e=>e.classList.remove('pl'));
+function setCur(i){const prev=PL.cur;PL.cur=i;elfSync(i);document.querySelectorAll('#v-read .pl').forEach(e=>e.classList.remove('pl'));
   if(VIEW==='read'){if(!onPage(i)&&S.follow){goPage(P[i],null,false);return}document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>{e.classList.add('pl');if(S.follow){const r=e.getBoundingClientRect(),cp=$('plcap'),lim=innerHeight-(cp&&cp.classList.contains('on')?cp.offsetHeight+60:140);if(r.top<70||r.bottom>lim)e.scrollIntoView({block:'center',behavior:'smooth'})}})}}
 AU.onended=()=>{if(PL.inBism){PL.inBism=false;const i=PL.queue[PL.pos];AU.src=ayURL(i);AU.playbackRate=S.rate;AU.play().catch(()=>{});return}
   PL.ayCnt++;if(PL.ayCnt<repN(S.repA)){AU.currentTime=0;AU.play().catch(()=>{});return}
@@ -719,11 +698,7 @@ document.addEventListener('click',e=>{
   const ex=e.target.closest('[data-ex]');if(ex){const [kind,fmt]=ex.dataset.ex.split(':');doExport(kind,fmt);return}
   const tp=e.target.closest('[data-topic]');if(tp){const v=tp.dataset.topic;TOPIC=v==='-'?null:v.split(':').map(Number);renderTopics();scrollTo(0,0);return}
   const pr=e.target.closest('[data-playrefs]');if(pr){playQueue(refIdx(pr.dataset.playrefs),0);return}
-  const ls=e.target.closest('[data-les]');if(ls){LES=+ls.dataset.les;renderElifba();if(innerWidth<=900)$('v-elifba').querySelector('.card').scrollIntoView({block:'start'});return}
-  const lst=e.target.closest('[data-lstep]');if(lst){let k=LES;do{k+= +lst.dataset.lstep}while(ELIFBA[k]&&ELIFBA[k].part);if(ELIFBA[k]){LES=k;renderElifba();scrollTo(0,0)}return}
-  const lt=e.target.closest('[data-letter]');if(lt){SLIDE={items:LETTERS.map((c,k)=>({c,n:lname(k),f:formsOf(c)})),k:+lt.dataset.letter};slideModal();return}
-  const sl=e.target.closest('[data-slide]');if(sl){const l=ELIFBA[LES];SLIDE={items:LETTERS.filter(c=>!(l.skip||'').includes(c)).map(c=>({c:(l.pre||'')+c+l.g})),k:+sl.dataset.slide};slideModal();return}
-  const slb=e.target.closest('[data-sl]');if(slb){SLIDE.k=(SLIDE.k+ +slb.dataset.sl+SLIDE.items.length)%SLIDE.items.length;slideModal();return}
+  if(elfClick(e))return;
   const st2=e.target.closest('[data-st2]');if(st2){STAB=st2.dataset.st2;renderSearch();return}
   const svt=e.target.closest('[data-svtab]');if(svt){SVTAB=svt.dataset.svtab;renderSaved();return}
   const sva=e.target.closest('[data-svadd]');if(sva){svAdd(sva.dataset.svadd);closeAll();return}

@@ -46,6 +46,16 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Liste kartları (`.sc .mt2`): sayfa bilgisi her zaman ikinci satırda. Bozuk kayıtlı `sv` verisi sayfayı çökertmez.
 - Tarama araçları: Elifba 33 dersin hepsi telefon + 1366 masaüstünde; diğer görünümler 1366 ve 1920'de.
 
+## v8: Elifba yeniden (11.11.2026) — Diyanet'in Elifba yapısı örnek alındı, içeriği kopyalanmadı
+- Kod: `src/elifba.js` (build.py `/*@ELIFBA@*/` işaretine app.js içine ekler). Metinler: `content.js` → `ELF_T`; dersler `ELIFBA[].x` anahtarıyla.
+- Müfredat: bölüm → ders → alt sayfa (`subsOf`): intro (ders girişi + adımlar + ✓), letters, names (Arapça harf adları), sounds (ince/kalın),
+  shapes (başta/ortada/sonda), similar (benzer harfler), forms, vgrid, compare, kavrama, words, rletters, rwords, rw2, signs, ayat, surah:k.
+- Sağda görüntüleyici (`viewerHTML`): büyük öğe, n/N, önceki/sonraki (Arapça sırası: sonraki solda), Sırayla göster (1,7 sn) /
+  Sırayla oku (âyet sesi, `elfSync` ile işaret), slayt, Âyeti dinle, Kur'an'da aç. Telefonda öğeye dokununca pencere.
+- Örnekler Kur'an metninden program ile (`vowelWords`, `ruleItems`): sık geçen kelimeler, her biri ilk geçtiği âyete bağlı; kural yeri kırmızı (`.hlr`).
+  İhfâ/izhar/idğam/iklab/mim kuralları Medine imlasındaki işaretlere dayanır (sükûnsuz nûn/mîm, ۢ, ۡ). «الله» bitişik çizildiği için kelimenin tamamı boyanır.
+- Harf/kelime ses kaydı YOK (lisanslı kaynak bulunmadı); görüntüleyici bunu açıkça yazar. İlerleme: LS `elf`, konum: LS `elfpos`.
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.

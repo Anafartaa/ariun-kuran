@@ -385,3 +385,93 @@ body.plopen .wrap{padding-bottom:300px}
 .sc .tx small.mt2{flex-wrap:wrap;row-gap:1px}
 .sc .mt2>span:last-child{flex-basis:100%}
 .sc .mt2>span:nth-last-child(2)::after{display:none}
+
+/* ---------- Elifba v8 ---------- */
+:root{--hlr:#C0392B}
+[data-theme=dark]{--hlr:#FF8A7A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--hlr:#FF8A7A}}
+.lnav button em{font-style:normal;flex:1;min-width:0}
+.lnav button .ok{color:var(--gold3);display:inline-grid;place-items:center}
+.lnav button.on .ok{color:#fff}
+.lsub{margin:2px 0 8px 30px;border-left:2px solid var(--line2);padding-left:6px;display:flex;flex-direction:column;gap:1px}
+.lsub button{font-size:13px;padding:6px 8px;align-items:center;gap:8px;color:var(--ink2)}
+.lsub button.on{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--ink);font-weight:600}
+.lsub button svg{color:var(--gold3);flex:none}
+.lsub .dot,.elsteps .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--line);flex:none;margin:0 3px}
+.eltabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;margin-bottom:6px;scrollbar-width:thin}
+.eltabs button{flex:none;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--ink2);white-space:nowrap}
+.eltabs button.on{background:var(--pri);border-color:var(--pri);color:#fff}
+[data-theme=dark] .eltabs button.on{color:#0C1428}
+.elhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:4px 0 10px}
+.elhead h3{margin:0;font:600 26px var(--disp);color:var(--ink)}
+.elwrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
+.elbody{min-width:0}
+.elv-slot{position:sticky;top:86px}
+.elnote{display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,var(--gold) 10%,var(--card));border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line));border-radius:var(--r2);padding:12px 14px;margin-bottom:12px;font:15px/1.6 var(--book);color:var(--ink)}
+.elnote svg{flex:none;color:var(--gold3);margin-top:3px}
+.elh{margin:14px 0 8px;font:600 14px var(--ui);color:var(--muted);letter-spacing:.02em}
+.elh.full{grid-column:1/-1;margin:10px 0 2px}
+.elg{display:grid;gap:8px;direction:rtl}
+.elg.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.elg.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.elg.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.eli{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:76px;padding:6px 6px 8px;border:1px solid var(--line);background:var(--card);border-radius:14px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+.eli:hover{border-color:var(--gold)}
+.eli.cur{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--card));box-shadow:0 0 0 2px color-mix(in srgb,var(--gold) 45%,transparent)}
+.eli .ea{font:32px/1.9 'Amiri Quran','Scheherazade New',serif;direction:rtl;white-space:nowrap}
+.eli small{font:500 11.5px/1.25 var(--ui);color:var(--muted);text-align:center;display:flex;flex-direction:column;align-items:center;gap:1px}
+.eli small .arn{font:19px/2 'Amiri Quran',Amiri,serif;color:var(--lapis);margin-bottom:2px}
+[data-theme=dark] .eli small .arn{color:var(--gold2)}
+.eli.hv{background:color-mix(in srgb,var(--lapis) 7%,var(--card))}
+.eli.lg2{background:color-mix(in srgb,var(--gold) 9%,var(--card))}
+.eli.sm{min-height:62px}.eli.sm .ea{font-size:27px}
+.eli.wide .ea{font-size:27px;white-space:normal}
+.hlr{color:var(--hlr)}
+.elgrp{border:1px solid var(--line2);border-radius:var(--r2);padding:10px;margin-bottom:10px;display:flex;flex-direction:column;gap:8px;background:color-mix(in srgb,var(--paper) 50%,transparent)}
+.elcmp{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.eltab-w{overflow-x:auto}
+.eltab{width:100%;border-collapse:separate;border-spacing:6px;direction:rtl}
+.eltab th{font:600 12.5px var(--ui);color:var(--muted);padding:4px}
+.eltab td,.eltab th{text-align:center;vertical-align:middle}
+.eltab th .eli{min-height:62px}
+.elay{display:flex;flex-direction:column;gap:8px}
+.eli.ayi{align-items:stretch;text-align:right;padding:10px 14px;min-height:0}
+.eli.ayi .ref{font:600 12.5px var(--ui);color:var(--pri);text-align:left}
+.eli.ayi .ea{font-size:26px;line-height:2.25;white-space:normal;text-align:right}
+/* görüntüleyici */
+.elv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px 14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+.elv.inm{border:0;box-shadow:none;padding:0}
+.elv-hd{display:flex;align-items:center;gap:8px}
+.elv-n{font:600 13px var(--ui);color:var(--muted);font-variant-numeric:tabular-nums}
+.elv-big{min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;font:84px/1.8 'Amiri Quran','Scheherazade New',serif;color:var(--ink);padding:6px 4px;word-break:keep-all}
+.elv-big.ay{font-size:30px;line-height:2.2;min-height:140px}
+.elv.inm .elv-big{font-size:110px;min-height:240px}.elv.inm .elv-big.ay{font-size:32px}
+.elv-big .in{display:block;max-width:100%}
+.eli.tall{min-height:118px;gap:0}.eli.tall .ea{line-height:1.7}.eli.tall small{margin-top:6px}
+.elv-cap{text-align:center;font:500 14px var(--ui);color:var(--muted);min-height:20px}
+.elv-ctl{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.elv-ctl .ib{border:1px solid var(--line);border-radius:50%;width:44px;height:44px}
+.elv-na{font-size:12px;flex:1;text-align:center}
+/* ders girişi */
+.elintro{text-align:center;padding:26px 22px}
+.elintro .eln{font:600 12px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--gold3)}
+.elintro h3{font:600 30px var(--disp);margin:6px 0 10px}
+.elintro .mt{max-width:62ch;margin:0 auto 16px;text-align:left}
+.elsteps{list-style:none;margin:18px auto 0;padding:0;max-width:460px;text-align:left;counter-reset:st}
+.elsteps li{border-top:1px solid var(--line2)}
+.elsteps button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:0;background:none;padding:11px 4px;font-size:14.5px;color:var(--ink);counter-increment:st}
+.elsteps button span::before{content:counter(st) ". ";color:var(--muted)}
+.elsteps .ok{color:var(--gold3)}
+@media (max-width:1200px){.elwrap{grid-template-columns:minmax(0,1fr) 290px}.elv-big{font-size:70px}}
+@media (max-width:900px){
+  .elwrap{grid-template-columns:1fr}
+  .elv-slot{display:none}
+  .elg.c5{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .elg.c4{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .elg.c3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .eli .ea{font-size:28px}
+  .elhead h3{font-size:22px}
+  .lsub{margin-left:22px}
+}
+@media (max-width:420px){.elg.c5{grid-template-columns:repeat(3,minmax(0,1fr))}.elg.c3{grid-template-columns:1fr}}
+.lay>div{min-width:0}

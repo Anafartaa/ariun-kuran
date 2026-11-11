@@ -14,6 +14,7 @@ meals = json.load(open(DATA/'meals.json', encoding='utf-8'))
 css = rd(SRC/'style.css')
 tpl = rd(SRC/'template.html').replace('/*CSS*/', css)
 app, content = rd(SRC/'app.js'), rd(SRC/'content.js')
+app = app.replace('/*@ELIFBA@*/', rd(SRC/'elifba.js'))  # Elifba modülü uygulamanın içine eklenir
 
 # ---------- site/ ----------
 if SITE.exists(): shutil.rmtree(SITE)
