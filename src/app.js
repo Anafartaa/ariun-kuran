@@ -39,7 +39,7 @@ kb:"Гар",words:"Үгээр",root:"Язгуур",lemma:"Үгийн үндэс"
 pos:{n:"нэр үг",v:"үйл үг",p:"сул үг",k:"оноосон нэр"},more:"Цааш нь",back:"Буцах",
 lessons:"Хичээлүүд",slide:"Слайд",prev:"Өмнөх",next:"Дараах",iso:"Ганцаар",ini:"Эхэнд",med:"Дунд",fin:"Төгсгөлд",
 src:"Эх сурвалж",loading:"Ачаалж байна…",
-plMin:"Жижигрүүлэх",plMax:"Томруулах",capT:"Орчуулгыг доор харуулах",play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
+plMin:"Жижигрүүлэх",plMax:"Томруулах",capT:"Орчуулгыг доор харуулах",backToCur:"Уншиж буй айлдвар руу",play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
 plist:"Сонсох жагсаалт",plMake:"Жагсаалт үүсгэх",plFav:"Хадгалсан жагсаалтууд",plName:"Жагсаалтын нэр",plFrom:"Эхлэх",plTo:"Дуусах",plEmpty:"Юу ч сонгоогүй байна",plAyR:"Айлдварын хүрээ",
 saveT:"Хадгалах",svPage:"Энэ хуудсыг хадгалах",svAyah:"Сонгосон айлдварыг хадгалах",svSurah:"Энэ сурег хадгалах",svJuz:"Энэ жузыг хадгалах",svDone:"Хадгалагдлаа",tPages:"Хуудас",tAyahs:"Айлдвар",tSurahs:"Суре",tJuzs:"Жуз",
 exWord:"Word файл",exExcel:"Excel (CSV) файл",share:"Хуваалцах",shared:"Холбоос хуулагдлаа",
@@ -70,7 +70,7 @@ kb:"Klavye",words:"Kelime kelime",root:"Kök",lemma:"Kelime kökü (lemma)",occ:
 pos:{n:"isim",v:"fiil",p:"harf",k:"özel isim"},more:"Devamı",back:"Geri",
 lessons:"Dersler",slide:"Slayt",prev:"Önceki",next:"Sonraki",iso:"Tek",ini:"Başta",med:"Ortada",fin:"Sonda",
 src:"Kaynaklar",loading:"Yükleniyor…",
-plMin:"Küçült",plMax:"Büyüt",capT:"Meali altta göster",play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
+plMin:"Küçült",plMax:"Büyüt",capT:"Meali altta göster",backToCur:"Okunan âyete dön",play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
 plist:"Dinleme listesi",plMake:"Liste oluştur",plFav:"Favori listeler",plName:"Liste adı",plFrom:"Başlangıç",plTo:"Bitiş",plEmpty:"Hiçbir şey seçilmedi",plAyR:"Ayet aralığı",
 saveT:"Kaydet",svPage:"Mevcut sayfayı kaydet",svAyah:"Seçili ayeti kaydet",svSurah:"Mevcut sureyi kaydet",svJuz:"Mevcut cüzü kaydet",svDone:"Kaydedildi",tPages:"Sayfalar",tAyahs:"Ayetler",tSurahs:"Sureler",tJuzs:"Cüzler",
 exWord:"Word dosyası",exExcel:"Excel (CSV) dosyası",share:"Paylaş",shared:"Bağlantı kopyalandı",
@@ -101,7 +101,7 @@ kb:"Keyboard",words:"Word by word",root:"Root",lemma:"Lemma",occ:"times",noRoot:
 pos:{n:"noun",v:"verb",p:"particle",k:"proper noun"},more:"More",back:"Back",
 lessons:"Lessons",slide:"Slides",prev:"Previous",next:"Next",iso:"Isolated",ini:"Initial",med:"Medial",fin:"Final",
 src:"Sources",loading:"Loading…",
-plMin:"Minimize",plMax:"Expand",capT:"Show translation below",play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
+plMin:"Minimize",plMax:"Expand",capT:"Show translation below",backToCur:"Back to current verse",play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
 plist:"Playlist",plMake:"Create list",plFav:"Saved lists",plName:"List name",plFrom:"From",plTo:"To",plEmpty:"Nothing selected",plAyR:"Verse range",
 saveT:"Save",svPage:"Save this page",svAyah:"Save selected verse",svSurah:"Save this surah",svJuz:"Save this juz",svDone:"Saved",tPages:"Pages",tAyahs:"Verses",tSurahs:"Surahs",tJuzs:"Juz",
 exWord:"Word file",exExcel:"Excel (CSV) file",share:"Share",shared:"Link copied",
@@ -288,7 +288,7 @@ async function fillQCF(el,pg){try{const [L]=await Promise.all([getQP(pg),getQF(p
     return `<div class="qln${pg<3?' c':''}">${l[1].map(w=>`<span class="qw${cls(w[0])}" data-i="${w[0]}">${w[1]}</span>`).join('')}</div>`}).join('');
   fitQCF(el);
   [pg+1,pg-1,pg+2].forEach(x=>{if(x>=1&&x<=604){getQP(x).catch(()=>{});getQF(x).catch(()=>{})}});
-  if(PL.cur>=0&&S.follow&&onPage(PL.cur)){const e=el.querySelector('.pl');if(e)e.scrollIntoView({block:'center'})}
+  if(PL.cur>=0&&S.follow&&followOK()&&onPage(PL.cur)){const e=el.querySelector('.pl');if(e)e.scrollIntoView({block:'center'})}
   }catch(e){QCF_FAIL=true;renderPage()}}
 /* akan metinde mushaf hattı: her kelime basılı Medine mushafındaki QCF glifiyle (ayet bir sonraki sayfaya taşabilir) */
 const QW={},QWP={};const useQF=()=>QCF_OK&&!QCF_FAIL&&S.font==='qcf';
@@ -315,7 +315,7 @@ function renderPage(){
   FLIPDIR=0;
   document.querySelectorAll('#v-read [data-qp]').forEach(el=>fillQCF(el,+el.dataset.qp));
   if(useQF())upgradeFlow($('pgwrap'));
-  if(PL.cur>=0&&S.follow&&onPage(PL.cur))requestAnimationFrame(()=>{const e=document.querySelector('#v-read .pl');if(e)e.scrollIntoView({block:'center'})});
+  if(PL.cur>=0&&S.follow&&followOK()&&onPage(PL.cur))requestAnimationFrame(()=>{const e=document.querySelector('#v-read .pl');if(e)e.scrollIntoView({block:'center'})});
   syncSel();
 }
 let DEFERRED_INSTALL=null;
@@ -502,8 +502,9 @@ function playCur(allowBism){const i=PL.queue[PL.pos];if(i==null){stopPlay();retu
   const p=AU.play();if(p&&p.catch)p.catch(err=>{if(err&&err.name==='NotAllowedError'){PL.playing=false;renderPlayer();return}});
   PL.playing=true;setCur(i);renderPlayer();preloadNext();mediaMeta(i)}
 function preloadNext(){const n=PL.queue[PL.pos+1];if(n!=null)try{PRE.src=ayURL(n)}catch(e){}}
+const followOK=()=>!FPAUSE;
 function setCur(i){const prev=PL.cur;PL.cur=i;elfSync(i);document.querySelectorAll('#v-read .pl').forEach(e=>e.classList.remove('pl'));
-  if(VIEW==='read'){if(!onPage(i)&&S.follow){goPage(P[i],null,false);return}document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>{e.classList.add('pl');if(S.follow){const r=e.getBoundingClientRect(),cp=$('plcap'),lim=innerHeight-(cp&&cp.classList.contains('on')?cp.offsetHeight+60:140);if(r.top<70||r.bottom>lim)e.scrollIntoView({block:'center',behavior:'smooth'})}})}}
+  if(VIEW==='read'){if(!onPage(i)&&S.follow&&followOK()){goPage(P[i],null,false);return}document.querySelectorAll(`#v-read [data-i="${i}"]`).forEach(e=>{e.classList.add('pl');if(S.follow&&followOK()){const r=e.getBoundingClientRect(),cp=$('plcap'),lim=innerHeight-(cp&&cp.classList.contains('on')?cp.offsetHeight+60:140);if(r.top<70||r.bottom>lim)e.scrollIntoView({block:'center',behavior:'smooth'})}})}}
 AU.onended=()=>{if(PL.inBism){PL.inBism=false;const i=PL.queue[PL.pos];AU.src=ayURL(i);AU.playbackRate=S.rate;AU.play().catch(()=>{});return}
   PL.ayCnt++;if(PL.ayCnt<repN(S.repA)){AU.currentTime=0;AU.play().catch(()=>{});return}
   PL.ayCnt=0;PL.pos++;
@@ -528,7 +529,7 @@ function renderCap(){const el=$('plcap');if(!el)return;
   if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="cref">${PL.inBism?'بِسۡمِ ٱللَّهِ':`${esc(sn(s))} ${s}:${a}`}</div><div class="ctx" lang="mn">${esc(txt)}</div>`;el.scrollTop=0;
     el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
   el.classList.add('on')}
-function renderPlayer(){const el=$('player');if(!el)return;
+function renderPlayer(){const el=$('player');if(!el)return;if(!PL.playing&&!PL.open)FPAUSE=false;renderFback();
   ['mbPlay','playTB'].forEach(id=>{const b=$(id);if(b)b.innerHTML=ic(PL.playing?'pause':'play')});
   document.body.classList.toggle('plopen',PL.open);document.body.classList.toggle('plmin',PL.open&&!!S.plMin);
   renderCap();
@@ -718,6 +719,7 @@ document.addEventListener('click',e=>{
   const tp=e.target.closest('[data-topic]');if(tp){const v=tp.dataset.topic;TOPIC=v==='-'?null:v.split(':').map(Number);renderTopics();setHash();scrollTo(0,0);return}
   const pr=e.target.closest('[data-playrefs]');if(pr){playQueue(refIdx(pr.dataset.playrefs),0);return}
   if(elfClick(e))return;
+  if(e.target.closest('#fback')){FPAUSE=false;renderFback();if(PL.cur>=0){if(!onPage(PL.cur))goPage(P[PL.cur],null,false);else{const x=document.querySelector('#v-read .pl');if(x)x.scrollIntoView({block:'center',behavior:'smooth'})}}return}
   const st2=e.target.closest('[data-st2]');if(st2){STAB=st2.dataset.st2;renderSearch();return}
   const svt=e.target.closest('[data-svtab]');if(svt){SVTAB=svt.dataset.svtab;renderSaved();return}
   const sva=e.target.closest('[data-svadd]');if(sva){svAdd(sva.dataset.svadd);closeAll();return}
@@ -816,7 +818,12 @@ document.addEventListener('touchstart',e=>{const p=e.touches[0];tx0=p.clientX;ty
 document.addEventListener('touchend',e=>{if(VIEW!=='read'||$('sheet').classList.contains('on')||$('modal').classList.contains('on'))return;const p=e.changedTouches[0];const dx=p.clientX-tx0,dy=p.clientY-ty0;
   if(Math.abs(dx)>70&&Math.abs(dy)<60&&!e.target.closest('.player,.selbar,select,input')){goPage(PAGE+(dx>0?1:-1)*step())}},{passive:true});
 let lastY=0;addEventListener('scroll',()=>{const y=scrollY;if(innerWidth<=900){if(y>lastY+8&&y>80)$('top').classList.add('hid');else if(y<lastY-8)$('top').classList.remove('hid')}lastY=y},{passive:true});
-let rzT;addEventListener('resize',()=>{$('saL').style.display=$('saR').style.display=VIEW==='read'&&innerWidth>900?'grid':'none';clearTimeout(rzT);rzT=setTimeout(()=>{if(VIEW==='read')renderPage()},200)});
+/* yalnız genişlik değişince yeniden çiz: telefonda adres çubuğu inip kalkınca (yükseklik) sayfa yeniden çizilip okunan âyete atlamasın */
+let rzT,rzW=innerWidth;addEventListener('resize',()=>{$('saL').style.display=$('saR').style.display=VIEW==='read'&&innerWidth>900?'grid':'none';if(innerWidth===rzW)return;rzW=innerWidth;clearTimeout(rzT);rzT=setTimeout(()=>{if(VIEW==='read')renderPage()},200)});
+/* ses çalarken kullanıcı kendisi kaydırınca takip durur; okunan âyet yeniden ekrana gelince ya da «Okunan âyete dön» ile sürer */
+let USCR=0,FPAUSE=false,uscT;const plVisible=()=>{const e=document.querySelector('#v-read .pl');if(!e)return false;const r=e.getBoundingClientRect();return r.bottom>60&&r.top<innerHeight-120};
+function renderFback(){const b=$('fback');if(!b)return;const on=FPAUSE&&PL.playing&&VIEW==='read'&&S.follow;b.classList.toggle('on',on);if(on)b.innerHTML=`${ic('head',16)} ${t('backToCur')}`}
+const userScrolled=()=>{USCR=Date.now();if(!(PL.playing&&VIEW==='read'&&S.follow))return;FPAUSE=true;clearTimeout(uscT);uscT=setTimeout(()=>{if(plVisible())FPAUSE=false;renderFback()},450);renderFback()};['wheel','touchmove'].forEach(ev=>addEventListener(ev,userScrolled,{passive:true}));addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End'].includes(e.key))userScrolled()});
 function route(){const h=(location.hash||'').slice(1);let m;
   if((m=h.match(/^p-(\d+)$/))){PAGE=Math.min(604,Math.max(1,+m[1]));show('read')}
   else if((m=h.match(/^a-(\d+)-(\d+)$/))&&+m[1]>=1&&+m[1]<=114){const s=+m[1],a=Math.min(C[s-1],Math.max(1,+m[2]));goAyah(gi(s,a))}

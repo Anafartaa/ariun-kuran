@@ -61,6 +61,10 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Pencere/alt menü/yan menü açılınca `ovOpened` bir kayıt ekler; geri hareketi önce onu kapatır. X ile kapatılınca `ovClosed` kaydı geri alır
   (aynı adımda başka ekrana geçilirse kayıt yeni ekranla değiştirilir). `popstate` durumu (`navState`) geri yükler.
 
+## Takip kaydırması (11.11.2026)
+- Ses çalarken kullanıcı kaydırırsa (`touchmove`/`wheel`/tuş) takip durur (`FPAUSE`); okunan âyet ekranda kalıyorsa sürer.
+  Üstte «Okunan âyete dön» düğmesi (`#fback`) takibi yeniden açar. `resize` yalnız genişlik değişince yeniden çizer (adres çubuğu atlatmasın).
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.
