@@ -21,7 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 build.py
+      # KAPALI dosyası varsa site yerine boş 'kapalı' sayfası yayınlanır (gizli mod). Açmak için KAPALI dosyasını silin.
+      - run: if [ -f KAPALI ]; then rm -rf site && cp -r kapali site; else python3 build.py; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

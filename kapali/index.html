@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="mn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>—</title>
+<style>html,body{height:100%;margin:0}body{display:grid;place-items:center;background:#101A33;color:#C9D3EA;font:16px system-ui,sans-serif}</style>
+</head><body><p>—</p>
+<script>
+/* eski kurulumların önbelleğini ve service worker'ını temizle */
+if('serviceWorker' in navigator)navigator.serviceWorker.getRegistrations().then(r=>r.forEach(x=>x.unregister())).catch(()=>{});
+if(window.caches)caches.keys().then(k=>k.forEach(n=>caches.delete(n))).catch(()=>{});
+</script></body></html>

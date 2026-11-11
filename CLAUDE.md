@@ -65,6 +65,10 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Ses çalarken kullanıcı kaydırırsa (`touchmove`/`wheel`/tuş) takip durur (`FPAUSE`); okunan âyet ekranda kalıyorsa sürer.
   Üstte «Okunan âyete dön» düğmesi (`#fback`) takibi yeniden açar. `resize` yalnız genişlik değişince yeniden çizer (adres çubuğu atlatmasın).
 
+## GİZLİ MOD (11.11.2026, kullanıcı isteği)
+- Kökte `KAPALI` dosyası varken iş akışı siteyi `kapali/` (boş sayfa + önbellek temizleyen sw.js) ile değiştirir. Yeniden açmak: `KAPALI`'yı sil, push.
+- Depo GitHub'da herkese açıktı (meals.json dahil); gizli yapmak kullanıcının adımı (Settings → Change visibility → Private).
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.
