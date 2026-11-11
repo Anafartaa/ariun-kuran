@@ -124,6 +124,7 @@ const DEF={qcf:true,theme:'light',fs:100,lh:2.3,font:'qcf',mfs:16,view:'quran',l
 let S=Object.assign({},DEF,LS.get('set',{}));if(S.view==='cmp')S.view='both';if(!FONTS_OK.includes(S.font))S.font='qcf';
 /* v6 tek seferlik: mushaf hattı ve tek sayfa yeni varsayılan */if((S.setV|0)<2){S.font='qcf';S.dbl=false;S.setV=2}
 let SV=LS.get('sv',null);if(!SV){SV={p:[],a:LS.get('saved',[]),s:[],j:[]}}
+/* bozuk/eski kayıtlar sayfayı çökertmesin */for(const k of ['p','a','s','j'])if(!Array.isArray(SV[k]))SV[k]=[];
 let NOTES=LS.get('notes',{}), BM=LS.get('bm',null), LAST=LS.get('last',1), PLS=LS.get('pls',[]);
 let READ=LS.get('read','');
 const saveSV=()=>LS.set('sv',SV);

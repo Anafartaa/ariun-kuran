@@ -164,7 +164,7 @@ h4.ih{font:600 21px/1.25 var(--disp);color:var(--pri);margin:22px 0 6px}
 .two{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;margin-top:12px;align-items:start}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:18px 20px}
 .card>b:first-child{font:600 20px var(--disp)}
-.votd{cursor:pointer}.votd .ar{font-size:calc(var(--arfs)*.8);text-align:right;text-align-last:auto;margin-top:6px}
+.votd{cursor:pointer}.votd .ar{font-size:calc(var(--arfs)*.8);line-height:2.3;text-align:right;text-align-last:auto;margin:6px 0 10px}
 .votd:hover{border-color:var(--gold)}
 /* lists (surahs, juz, topics, search results) */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0 18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:4px 14px}
@@ -183,7 +183,8 @@ h4.ih{font:600 21px/1.25 var(--disp);color:var(--pri);margin:22px 0 6px}
 .res{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:14px 16px;margin-bottom:8px;color:var(--ink)}
 .res:hover{border-color:var(--gold)}
 .res .ref{font-size:13px;color:var(--pri);font-weight:600;margin-bottom:4px}
-.res .ar{font-size:23px;text-align:right;text-align-last:auto;line-height:2}
+.res .ar{font-size:24px;text-align:right;text-align-last:auto;line-height:2.3;margin:2px 0 10px}
+.res .mt{padding-top:8px;border-top:1px solid var(--line2)}
 .res mark{background:var(--hl);color:inherit;border-radius:3px}
 .svrow{display:flex;gap:8px;align-items:flex-start}.svrow .res{flex:1}.svrow .ib{margin-top:6px}
 .tabs{display:flex;flex-wrap:wrap;width:100%}.tabs button{flex:1;min-width:max-content}
@@ -379,3 +380,8 @@ body.plopen .wrap{padding-bottom:300px}
 .qflow .ay.qfd{padding:0 .06em}
 .qflow .both .it .ar,.qflow .mlist .ar{line-height:calc(var(--arlh)*.95)}
 .bsm.qbs{direction:ltr;unicode-bidi:bidi-override;font-size:calc(var(--arfs)*var(--ms)*1.05)}
+
+/* liste kartları: sayfa bilgisi her zaman ikinci satırda (kartlar arasında eşit düzen) */
+.sc .tx small.mt2{flex-wrap:wrap;row-gap:1px}
+.sc .mt2>span:last-child{flex-basis:100%}
+.sc .mt2>span:nth-last-child(2)::after{display:none}

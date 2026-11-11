@@ -38,6 +38,14 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Diğer Kur'an fontları: Amiri Quran, Scheherazade New, Amiri. **Noto Naskh Arabic çıkarıldı**: Tanzil Osmanî metinde
   iklab mimini (U+06E2) üstünle tek işarete birleştiriyor (ör. 3:49 طَيۡرَۢا tenvin gibi görünüyor). Kayıtlı 'naskh' → 'sch' (`FONTS_OK`).
 
+## v7: Elifba ve masaüstü taraması (11.11.2026)
+- Elifba harf tablosu: harf `.lg .gl` kendi yüksekliğinde (kuyruklu ج ح خ ع غ م ي ada binmiyor; mürekkep ölçümü ≥5,5px boşluk).
+- Metin içi Arapça (`arIn`, `.arin`): ders açıklamalarındaki Arapça örnekler Kur'an fontuyla (önce noktalı daireye düşüyordu).
+- Vakf işaretleri NBSP üstünde (`.sgn .s .mk`), tatvil/noktalı daire yok.
+- Ayet kartları (`.res`, `.votd`): Arapça satır aralığı 2.3 + meal ile arasında boşluk/çizgi.
+- Liste kartları (`.sc .mt2`): sayfa bilgisi her zaman ikinci satırda. Bozuk kayıtlı `sv` verisi sayfayı çökertmez.
+- Tarama araçları: Elifba 33 dersin hepsi telefon + 1366 masaüstünde; diğer görünümler 1366 ve 1920'de.
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.
