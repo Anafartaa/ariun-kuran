@@ -442,7 +442,10 @@ function renderIntro(){const tx=INTRO[S.lang]||INTRO.mn;
   ${kunyeHTML()}
   <h3>${L({mn:"Мусхаф дахь тэмдгүүд",tr:"Mushaftaki işaretler",en:"Signs in the mushaf"})}</h3><div class="card">${signsHTML()}</div>
   <h3>${t('src')}</h3><div class="card"><ul class="muted" style="margin:0;padding-left:18px;font-size:13px">${t('srcList').map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`}
-function signsHTML(){return SIGNS.map(s=>`<div class="sgn"><span class="s">${s[0]==='۩'||s[0]==='۞'?s[0]:'◌'+s[0]}</span><span>${esc(L(s[1]))}</span></div>`).join('')}
+/* metin içindeki Arapça parçaları Kur'an fontuyla göster (açıklama fontunda Arapça yok → harekeler noktalı daireye düşüyordu) */
+const AR_RUN=/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF](?:[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF\u200c\u200d ]*[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF])?/g;
+const arIn=h=>h.replace(AR_RUN,m=>`<span class="arin" dir="rtl">${m}</span>`);
+function signsHTML(){return SIGNS.map(s=>`<div class="sgn"><span class="s">${s[0]==='۩'||s[0]==='۞'?s[0]:'<i class="mk">\u00A0'+s[0]+'</i>'}</span><span>${esc(L(s[1]))}</span></div>`).join('')}
 
 /* ---------- refs helper ---------- */
 function refIdx(spec){const out=[];for(const part of spec.split(',')){const m=part.trim().match(/^(\d+):(\d+)(?:-(\d+))?$/);if(!m)continue;const s=+m[1],a=+m[2],b=m[3]?+m[3]:a;for(let x=a;x<=Math.min(b,C[s-1]);x++)out.push(gi(s,x))}return out}
@@ -468,14 +471,14 @@ function lname(k){return (LNAME[S.lang]||LNAME.mn)[k]}
 function formsOf(ch){const z='‍';const nj=NONJOIN.includes(ch);return [ch, nj?ch:ch+z, nj?z+ch:z+ch+z, z+ch]}
 function renderElifba(){
   const l=ELIFBA[LES];let body='';
-  if(l.type==='letters')body=`<div class="lgrid">${LETTERS.map((c,k)=>`<button class="lg" data-letter="${k}">${c}<small>${esc(lname(k))}</small></button>`).join('')}</div>`;
+  if(l.type==='letters')body=`<div class="lgrid">${LETTERS.map((c,k)=>`<button class="lg" data-letter="${k}"><span class="gl">${c}</span><small>${esc(lname(k))}</small></button>`).join('')}</div>`;
   else if(l.type==='forms')body=`<div style="overflow:auto"><table class="ftab"><tr><th></th><th>${t('iso')}</th><th>${t('ini')}</th><th>${t('med')}</th><th>${t('fin')}</th></tr>${LETTERS.map((c,k)=>{const f=formsOf(c);return `<tr><th>${esc(lname(k))}</th>${f.map(x=>`<td>${x}</td>`).join('')}</tr>`}).join('')}</table></div>`;
   else if(l.type==='grid'){const items=LETTERS.filter(c=>!(l.skip||'').includes(c)).map(c=>(l.pre||'')+c+l.g);
     body=`<div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-slide="0">${ic('fs',16)} ${t('slide')}</button></div><div class="lgrid">${items.map((x,k)=>`<button class="lg" data-slide="${k}">${x}</button>`).join('')}</div>`}
   else if(l.type==='rule')body=`<div class="rulel">${l.l}</div><div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${l.refs}">${ic('play',14)} ${t('play')}</button></div>`+refIdx(l.refs).map(i=>resItem(i)).join('');
   else if(l.type==='ayat')body=`<div class="btns" style="justify-content:flex-start;margin:0 0 10px"><button class="btn s" data-playrefs="${l.refs}">${ic('play',14)} ${t('play')}</button></div>`+refIdx(l.refs).map(i=>resItem(i)).join('');
   else if(l.type==='signs')body=`<div class="card">${signsHTML()}</div>`;
-  $('v-elifba').innerHTML=`<h2>${t('elifba')}</h2><div class="lay"><nav class="lnav">${lessonList()}</nav><div><div class="card" style="margin-bottom:12px"><b style="font-size:18px">${esc(L(l.t))}</b><p class="mt" style="margin:8px 0 0">${esc(L(l.d))}</p></div>${body}
+  $('v-elifba').innerHTML=`<h2>${t('elifba')}</h2><div class="lay"><nav class="lnav">${lessonList()}</nav><div><div class="card" style="margin-bottom:12px"><b style="font-size:18px">${arIn(esc(L(l.t)))}</b><p class="mt" style="margin:8px 0 0">${arIn(esc(L(l.d)))}</p></div>${body}
   <div class="btns" style="justify-content:space-between"><button class="btn s" data-lstep="-1">${ic('cl',16)} ${t('prev')}</button><button class="btn" data-lstep="1">${t('next')} ${ic('cr',16)}</button></div></div></div>`;
 }
 let SLIDE={items:[],k:0};
