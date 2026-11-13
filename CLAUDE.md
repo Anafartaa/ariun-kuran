@@ -65,7 +65,7 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Ses çalarken kullanıcı kaydırırsa (`touchmove`/`wheel`/tuş) takip durur (`FPAUSE`); okunan âyet ekranda kalıyorsa sürer.
   Üstte «Okunan âyete dön» düğmesi (`#fback`) takibi yeniden açar. `resize` yalnız genişlik değişince yeniden çizer (adres çubuğu atlatmasın).
 
-## GİZLİ MOD (11.11.2026, kullanıcı isteği)
+## GİZLİ MOD (11.11.2026 açıldı, 13.11.2026 kullanıcı isteğiyle kapatıldı: site yeniden yayında)
 - Kökte `KAPALI` dosyası varken iş akışı siteyi `kapali/` (boş sayfa + önbellek temizleyen sw.js) ile değiştirir. Yeniden açmak: `KAPALI`'yı sil, push.
 - Depo GitHub'da herkese açıktı (meals.json dahil); gizli yapmak kullanıcının adımı (Settings → Change visibility → Private).
 
