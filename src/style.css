@@ -480,3 +480,10 @@ body.plopen .wrap{padding-bottom:300px}
   display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(199,160,74,.5);background:var(--night);color:#F2E6C4;border-radius:999px;padding:9px 16px;font:600 13.5px var(--ui);white-space:nowrap;max-width:calc(100vw - 32px);box-shadow:0 10px 28px rgba(10,16,32,.35);transition:opacity .2s,transform .2s}
 .fback.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 @media (max-width:900px){.fback{top:calc(env(safe-area-inset-top,0px) + 14px)}}
+/* ek meal dipnotları (Kırgızca) */
+.fnd{margin-top:6px;font:13px/1.55 var(--ui);color:var(--ink2)}
+.fnd summary{cursor:pointer;color:var(--pri);font-weight:600;font-size:12.5px;list-style:none;display:inline-flex;align-items:center;gap:5px}
+.fnd summary::-webkit-details-marker{display:none}
+.fnd summary::before{content:"＋";font-weight:400}
+.fnd[open] summary::before{content:"－"}
+.fnd ol{margin:6px 0 2px;padding-left:20px;display:flex;flex-direction:column;gap:4px}

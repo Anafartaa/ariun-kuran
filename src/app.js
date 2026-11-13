@@ -39,7 +39,7 @@ kb:"Гар",words:"Үгээр",root:"Язгуур",lemma:"Үгийн үндэс"
 pos:{n:"нэр үг",v:"үйл үг",p:"сул үг",k:"оноосон нэр"},more:"Цааш нь",back:"Буцах",
 lessons:"Хичээлүүд",slide:"Слайд",prev:"Өмнөх",next:"Дараах",iso:"Ганцаар",ini:"Эхэнд",med:"Дунд",fin:"Төгсгөлд",
 src:"Эх сурвалж",loading:"Ачаалж байна…",
-plMin:"Жижигрүүлэх",plMax:"Томруулах",capT:"Орчуулгыг доор харуулах",backToCur:"Уншиж буй айлдвар руу",play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
+plMin:"Жижигрүүлэх",plMax:"Томруулах",capT:"Орчуулгыг доор харуулах",backToCur:"Уншиж буй айлдвар руу",notPrinted:"Энэ айлдварын орчуулга хэвлэлд байхгүй",fnotes:"Тайлбар",mealErr:"Орчуулгыг ачаалж чадсангүй",play:"Сонсох",pause:"Зогсоох",listenSurah:"Бисмиллахтай эхнээс нь сонсох",reciter:"Уншигч",speed:"Хурд",repAyah:"Айлдвар давтах",repRange:"Хүрээ давтах",none:"Үгүй",inf:"Тасралтгүй",rangeT:"Хүрээ",rgPage:"Хуудас дуустал",rgSurah:"Суре дуустал",rgAll:"Тасралтгүй",follow:"Дагаж гүйлгэх",audioErr:"Аудио тоглуулж чадсангүй. Интернэт холболтоо шалгана уу (claude.ai урьдчилсан харагдацад аудио ажиллахгүй).",
 plist:"Сонсох жагсаалт",plMake:"Жагсаалт үүсгэх",plFav:"Хадгалсан жагсаалтууд",plName:"Жагсаалтын нэр",plFrom:"Эхлэх",plTo:"Дуусах",plEmpty:"Юу ч сонгоогүй байна",plAyR:"Айлдварын хүрээ",
 saveT:"Хадгалах",svPage:"Энэ хуудсыг хадгалах",svAyah:"Сонгосон айлдварыг хадгалах",svSurah:"Энэ сурег хадгалах",svJuz:"Энэ жузыг хадгалах",svDone:"Хадгалагдлаа",tPages:"Хуудас",tAyahs:"Айлдвар",tSurahs:"Суре",tJuzs:"Жуз",
 exWord:"Word файл",exExcel:"Excel (CSV) файл",share:"Хуваалцах",shared:"Холбоос хуулагдлаа",
@@ -48,7 +48,7 @@ tAll:"Бүгд",tAr:"Араб",tMeal:"Орчуулга",tSur:"Суре",adv:"Н�
 sort:"Эрэмбэ",soMushaf:"Мусхафын дараалал",soRev:"Буусан дараалал",soName:"Нэрээр",soAr:"Араб нэрээр",soAy:"Айлдварын тоогоор",soPg:"Хуудасны тоогоор",revOrd:"буусан дараалал",pages:"хуудас",
 sentAt:"-д илгээгдсэн.",install:"Утсанд апп болгон суулгах",installIOS:"iPhone дээр: Safari-ийн «Хуваалцах» товч → «Нүүр дэлгэцэнд нэмэх».",
 about:"Сайтын тухай",aboutTx:"«Ариун Куран» нь Кураны араб эх, монгол утга агуулгыг уншиж, сонсож, судлах зорилготой үнэгүй вэб сайт юм. Утас, таблет, компьютер дээр адилхан ажиллана.",usage:"Хэрэглээ",faq:"Түгээмэл асуулт",readers:"Уншигчид",contact:"Санал хүсэлт",contactNone:"Санал хүсэлтийн хаяг удахгүй нэмэгдэнэ.",shortcuts:"Гарын товчлол",
-srcList:["Араб эх: Хафс уншлагын Усмани бичвэр (Фахд хааны Куран хэвлэх цогцолбор; fawazahmed0/quran-api).","Монгол утга агуулга: Түрк Улсын Шашны Хэрэг Эрхлэх Газар, Анкара, 2020.","Мусхафын хуудас: Фахд хааны цогцолборын QCF фонт, хуудасны бүтэц: zonetecde/mushaf-layout.","Суре буусан дараалал: quran-meta (MIT).","Аудио: Islamic Network CDN (alquran.cloud) — уншигчид буюу өв залгамжлагчдаас ашгийн бус, үнэгүй түгээх зөвшөөрөлтэй бичлэгүүд. Хузайфи, Аюуб, Ахдар: Фахд хааны Куран хэвлэх цогцолборын уншигчид."],
+srcList:["Араб эх: Хафс уншлагын Усмани бичвэр (Фахд хааны Куран хэвлэх цогцолбор; fawazahmed0/quran-api).","Монгол утга агуулга: Түрк Улсын Шашны Хэрэг Эрхлэх Газар, Анкара, 2020.","Казах ба киргиз орчуулга: Түрк Улсын Шашны Хэрэг Эрхлэх Газар (Анкара 2015; Истанбул 2016).","Мусхафын хуудас: Фахд хааны цогцолборын QCF фонт, хуудасны бүтэц: zonetecde/mushaf-layout.","Суре буусан дараалал: quran-meta (MIT).","Аудио: Islamic Network CDN (alquran.cloud) — уншигчид буюу өв залгамжлагчдаас ашгийн бус, үнэгүй түгээх зөвшөөрөлтэй бичлэгүүд. Хузайфи, Аюуб, Ахдар: Фахд хааны Куран хэвлэх цогцолборын уншигчид."],
 faqL:[["Тэмдэглэл маань хаана хадгалагдах вэ?","Зөвхөн энэ төхөөрөмжийн хөтөч дээр. Өөр төхөөрөмж рүү шилжүүлэхийн тулд «Нөөцлөх» хэсгээс файл татаж аваад нөгөө төхөөрөмж дээрээ оруулна."],["Интернэтгүй ашиглаж болох уу?","Сайтыг нэг удаа бүрэн нээсний дараа араб эх, орчуулга интернэтгүй ажиллана. Аудио сонсоход интернэт хэрэгтэй."],["Сонсох функцийг хэрхэн ашиглах вэ?","Доод мөрний ▶ товч эсвэл айлдвар дээр дараад «Сонсох». Уншигч, хурд, давталтыг тоглуулагчаас сонгоно."],["Зарим айлдварт «хамт орчуулагдсан» гэж яагаад бичсэн бэ?","Хэвлэмэл орчуулгад тэр хоёр айлдварыг нэг өгүүлбэрээр орчуулсан тул текст нь өмнөх айлдварт байгаа."],["Хуудасны дугаар яагаад миний мусхафтай таарахгүй байна?","Энэ сайт Мадина мусхафын 604 хуудасны хуваалтыг ашигладаг."]],
 helpTx:["Айлдвар дээр дарж сонсох, хуулах, хадгалах, хуваалцах, тэмдэглэл бичих цэсийг нээнэ.","Компьютер дээр айлдвар дээр давхар дарвал тэндээс уншиж эхэлнэ.","Ctrl (⌘) дарж байгаад олон айлдвар, Shift дарж байгаад хүрээг сонгоно. Утсан дээр «Олон айлдвар сонгох»-ыг ашиглана.","Утсан дээр хуудсыг баруун тийш шудрахад дараагийн хуудас, зүүн тийш өмнөх хуудас нээгдэнэ.","Хуудас бүрийг «Уншсан» гэж тэмдэглэн хатмын явцаа хянана."],
 keys:[["← / →","Дараагийн / өмнөх хуудас"],["Space","Сонсох / зогсоох"],["/","Хайлт"],["Esc","Цонх хаах"]]},
@@ -70,7 +70,7 @@ kb:"Klavye",words:"Kelime kelime",root:"Kök",lemma:"Kelime kökü (lemma)",occ:
 pos:{n:"isim",v:"fiil",p:"harf",k:"özel isim"},more:"Devamı",back:"Geri",
 lessons:"Dersler",slide:"Slayt",prev:"Önceki",next:"Sonraki",iso:"Tek",ini:"Başta",med:"Ortada",fin:"Sonda",
 src:"Kaynaklar",loading:"Yükleniyor…",
-plMin:"Küçült",plMax:"Büyüt",capT:"Meali altta göster",backToCur:"Okunan âyete dön",play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
+plMin:"Küçült",plMax:"Büyüt",capT:"Meali altta göster",backToCur:"Okunan âyete dön",notPrinted:"Bu âyetin çevirisi basılı mealde yok",fnotes:"Açıklama",mealErr:"Meal yüklenemedi",play:"Dinle",pause:"Durdur",listenSurah:"Sureyi besmeleyle baştan dinle",reciter:"Kari",speed:"Hız",repAyah:"Ayet tekrarı",repRange:"Aralık tekrarı",none:"Yok",inf:"Sürekli",rangeT:"Aralık",rgPage:"Sayfa sonuna kadar",rgSurah:"Sure sonuna kadar",rgAll:"Kesintisiz",follow:"Takip et",audioErr:"Ses çalınamadı. İnternet bağlantınızı kontrol edin (claude.ai önizlemesinde ses çalışmaz).",
 plist:"Dinleme listesi",plMake:"Liste oluştur",plFav:"Favori listeler",plName:"Liste adı",plFrom:"Başlangıç",plTo:"Bitiş",plEmpty:"Hiçbir şey seçilmedi",plAyR:"Ayet aralığı",
 saveT:"Kaydet",svPage:"Mevcut sayfayı kaydet",svAyah:"Seçili ayeti kaydet",svSurah:"Mevcut sureyi kaydet",svJuz:"Mevcut cüzü kaydet",svDone:"Kaydedildi",tPages:"Sayfalar",tAyahs:"Ayetler",tSurahs:"Sureler",tJuzs:"Cüzler",
 exWord:"Word dosyası",exExcel:"Excel (CSV) dosyası",share:"Paylaş",shared:"Bağlantı kopyalandı",
@@ -79,7 +79,7 @@ tAll:"Tümü",tAr:"Arapça",tMeal:"Meal",tSur:"Sure",adv:"Detaylı arama",whole:
 sort:"Sıralama",soMushaf:"Mushaf sırası",soRev:"İniş sırası",soName:"Ada göre",soAr:"Arapça ada göre",soAy:"Ayet sayısına göre",soPg:"Sayfa sayısına göre",revOrd:"iniş sırası",pages:"sayfa",
 sentAt:"'de inmiştir.",install:"Telefona uygulama olarak kur",installIOS:"iPhone'da: Safari'de «Paylaş» → «Ana Ekrana Ekle».",
 about:"Site hakkında",aboutTx:"«Ariun Kuran», Kur'an'ın Arapça metnini ve Moğolca mealini okumak, dinlemek ve incelemek için ücretsiz bir web sitesidir. Telefon, tablet ve bilgisayarda aynı şekilde çalışır.",usage:"Kullanım",faq:"Sıkça sorulan sorular",readers:"Seslendirenler",contact:"İstek ve öneriler",contactNone:"İletişim adresi yakında eklenecek.",shortcuts:"Klavye kısayolları",
-srcList:["Arapça metin: Hafs rivayeti Osmanî hat (Kral Fahd Kur'an Kompleksi; fawazahmed0/quran-api).","Moğolca meal: Diyanet İşleri Başkanlığı, Ankara, 2020.","Mushaf sayfası: Kral Fahd Kompleksi QCF fontları, sayfa düzeni: zonetecde/mushaf-layout.","Sure iniş sırası: quran-meta (MIT).","Ses: Islamic Network CDN (alquran.cloud) — hafızlar veya vârislerince ücretsiz, ticari olmayan dağıtım için lisanslı kayıtlar. Huzeyfî, Eyyûb, Ahdar: Kral Fahd Kur'an Kompleksi'nin tilavet listesindeki hafızlar."],
+srcList:["Arapça metin: Hafs rivayeti Osmanî hat (Kral Fahd Kur'an Kompleksi; fawazahmed0/quran-api).","Moğolca meal: Diyanet İşleri Başkanlığı, Ankara, 2020.","Kazakça ve Kırgızca meal: Diyanet İşleri Başkanlığı (Ankara 2015; İstanbul 2016).","Mushaf sayfası: Kral Fahd Kompleksi QCF fontları, sayfa düzeni: zonetecde/mushaf-layout.","Sure iniş sırası: quran-meta (MIT).","Ses: Islamic Network CDN (alquran.cloud) — hafızlar veya vârislerince ücretsiz, ticari olmayan dağıtım için lisanslı kayıtlar. Huzeyfî, Eyyûb, Ahdar: Kral Fahd Kur'an Kompleksi'nin tilavet listesindeki hafızlar."],
 faqL:[["Notlarım nerede saklanıyor?","Yalnızca bu cihazın tarayıcısında. Başka cihaza taşımak için «Yedekle» bölümünden dosyayı indirip diğer cihazda yükleyin."],["İnternetsiz kullanılabilir mi?","Site bir kez tamamen açıldıktan sonra Arapça metin ve meal internetsiz çalışır. Dinlemek için internet gerekir."],["Dinleme nasıl kullanılır?","Alt çubuktaki ▶ düğmesine basın ya da bir ayete dokunup «Dinle»yi seçin. Kari, hız ve tekrarı oynatıcıdan seçin."],["Bazı ayetlerde neden «birlikte çevrildi» yazıyor?","Basılı mealde bu iki ayet tek cümleyle çevrildiği için metin önceki ayettedir."],["Sayfa numaraları neden mushafımla uyuşmuyor?","Bu site Medine mushafının 604 sayfalık düzenini kullanır."]],
 helpTx:["Bir ayete dokunarak dinleme, kopyalama, kaydetme, paylaşma ve not menüsünü açın.","Bilgisayarda bir ayete çift tıklayınca okuma oradan başlar.","Ctrl (⌘) ile birden çok ayet, Shift ile aralık seçin. Telefonda «Birden çok ayet seç»i kullanın.","Telefonda sağa kaydırınca sonraki, sola kaydırınca önceki sayfa açılır.","Her sayfayı «Okundu» işaretleyerek hatim ilerlemenizi takip edin."],
 keys:[["← / →","Sonraki / önceki sayfa"],["Boşluk","Dinle / durdur"],["/","Arama"],["Esc","Pencereyi kapat"]]},
@@ -101,7 +101,7 @@ kb:"Keyboard",words:"Word by word",root:"Root",lemma:"Lemma",occ:"times",noRoot:
 pos:{n:"noun",v:"verb",p:"particle",k:"proper noun"},more:"More",back:"Back",
 lessons:"Lessons",slide:"Slides",prev:"Previous",next:"Next",iso:"Isolated",ini:"Initial",med:"Medial",fin:"Final",
 src:"Sources",loading:"Loading…",
-plMin:"Minimize",plMax:"Expand",capT:"Show translation below",backToCur:"Back to current verse",play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
+plMin:"Minimize",plMax:"Expand",capT:"Show translation below",backToCur:"Back to current verse",notPrinted:"This verse is not translated in the printed edition",fnotes:"Notes",mealErr:"Could not load the translation",play:"Listen",pause:"Pause",listenSurah:"Listen from the start with basmala",reciter:"Reciter",speed:"Speed",repAyah:"Repeat verse",repRange:"Repeat range",none:"No",inf:"Endless",rangeT:"Range",rgPage:"To end of page",rgSurah:"To end of surah",rgAll:"Continuous",follow:"Follow",audioErr:"Audio could not be played. Check your connection (audio does not work in the claude.ai preview).",
 plist:"Playlist",plMake:"Create list",plFav:"Saved lists",plName:"List name",plFrom:"From",plTo:"To",plEmpty:"Nothing selected",plAyR:"Verse range",
 saveT:"Save",svPage:"Save this page",svAyah:"Save selected verse",svSurah:"Save this surah",svJuz:"Save this juz",svDone:"Saved",tPages:"Pages",tAyahs:"Verses",tSurahs:"Surahs",tJuzs:"Juz",
 exWord:"Word file",exExcel:"Excel (CSV) file",share:"Share",shared:"Link copied",
@@ -110,7 +110,7 @@ tAll:"All",tAr:"Arabic",tMeal:"Translation",tSur:"Surah",adv:"Advanced search",w
 sort:"Sort",soMushaf:"Mushaf order",soRev:"Revelation order",soName:"By name",soAr:"By Arabic name",soAy:"By verse count",soPg:"By page count",revOrd:"revelation order",pages:"pages",
 sentAt:"",install:"Install as an app",installIOS:"On iPhone: Safari «Share» → «Add to Home Screen».",
 about:"About",aboutTx:"«Ariun Kuran» is a free website for reading, listening to and studying the Arabic text of the Qur'an and its Mongolian translation. It works on phones, tablets and computers.",usage:"How to use",faq:"FAQ",readers:"Reciters",contact:"Feedback",contactNone:"A contact address will be added soon.",shortcuts:"Keyboard shortcuts",
-srcList:["Arabic text: Hafs, Uthmani script (King Fahd Complex; fawazahmed0/quran-api).","Mongolian translation: Presidency of Religious Affairs of Türkiye, Ankara, 2020.","Mushaf pages: King Fahd Complex QCF fonts, page layout: zonetecde/mushaf-layout.","Revelation order: quran-meta (MIT).","Audio: Islamic Network CDN (alquran.cloud) — recitations licensed by the reciters or their estates for free, non-commercial redistribution. Hudhaify, Ayyoub, Akhdar: reciters of the King Fahd Qur'an Complex."],
+srcList:["Arabic text: Hafs, Uthmani script (King Fahd Complex; fawazahmed0/quran-api).","Mongolian translation: Presidency of Religious Affairs of Türkiye, Ankara, 2020.","Kazakh and Kyrgyz translations: Presidency of Religious Affairs of Türkiye (Ankara 2015; Istanbul 2016).","Mushaf pages: King Fahd Complex QCF fonts, page layout: zonetecde/mushaf-layout.","Revelation order: quran-meta (MIT).","Audio: Islamic Network CDN (alquran.cloud) — recitations licensed by the reciters or their estates for free, non-commercial redistribution. Hudhaify, Ayyoub, Akhdar: reciters of the King Fahd Qur'an Complex."],
 faqL:[["Where are my notes stored?","Only in this device's browser. To move them, download a backup file and upload it on the other device."],["Does it work offline?","After the site has fully loaded once, the Arabic text and translation work offline. Listening needs a connection."],["How do I listen?","Press ▶ in the bottom bar, or tap a verse and choose «Listen». Pick reciter, speed and repeat in the player."],["Why do some verses say «translated together»?","The printed translation renders those two verses in one sentence, so the text sits on the previous verse."],["Why don't page numbers match my mushaf?","This site uses the 604-page Madinah mushaf layout."]],
 helpTx:["Tap a verse to listen, copy, save, share or add a note.","On a computer, double-click a verse to start reading from it.","Hold Ctrl (⌘) to pick several verses, Shift for a range. On phones use «Select verses».","On phones swipe right for the next page and left for the previous one.","Mark each page as read to track your khatm."],
 keys:[["← / →","Next / previous page"],["Space","Play / pause"],["/","Search"],["Esc","Close dialogs"]]}
@@ -138,8 +138,15 @@ const FONTS={qcf:"'Amiri Quran','Scheherazade New',serif",amiri:"'Amiri Quran','
 const FONTN={qcf:'Mushaf (KFGQPC)',amiri:'Amiri Quran',sch:'Scheherazade New',amiri2:'Amiri'};
 
 /* ---------- meals ---------- */
-let MEALS=[];const MERGED={};
-const curMeal=()=>MEALS.find(m=>m.id===S.meal)||MEALS.find(m=>m.lang===S.lang)||MEALS[0]||null;
+let MEALS=[];const MLOAD={};
+function addMeal(m,src){const mg={};for(const g of (m.merged||[]))for(let x=g[1]+1;x<=g[2];x++)mg[gi(g[0],x)]=[g[0],g[1],g[2]];
+  const o={id:m.id,name:m.name,lang:m.lang||'mn',arr:m.arr,bism:m.bism||'',src,mg,miss:new Set(m.miss||[]),notes:m.notes||{}};MEALS.push(o);return o}
+function loadMeal(id){const x=EXTRA_MEALS.find(e=>e.id===id);if(!x||MLOAD[id]||MEALS.some(m=>m.id===id))return;
+  MLOAD[id]=getJSON('meal-'+id).then(m=>{if(m&&Array.isArray(m.arr)&&m.arr.length===N){addMeal(m,'emb');IML[id]=null}}).catch(()=>{toast(t('mealErr'))}).then(()=>{delete MLOAD[id];rerenderMeal()})}
+function rerenderMeal(){if(VIEW==='read')renderPage();else if(VIEW==='home'||VIEW==='search')show(VIEW);renderCap()}
+const mealChoices=()=>[['mn',(MEALS.find(m=>m.id==='mn')||{name:'Монгол'}).name]].concat(EXTRA_MEALS.map(x=>[x.id,L(x.label)+' — '+x.name]));
+const curMealId=()=>MEALS.some(m=>m.id===S.meal)||EXTRA_MEALS.some(e=>e.id===S.meal)?S.meal:'mn';
+const curMeal=()=>{const m=MEALS.find(m=>m.id===S.meal);if(m)return m;if(EXTRA_MEALS.some(e=>e.id===S.meal)){loadMeal(S.meal);return null}return MEALS.find(m=>m.lang===S.lang)||MEALS[0]||null};
 let IML={};
 function idb(){return new Promise((res,rej)=>{try{const r=indexedDB.open('qk',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}catch(e){rej(e)}})}
 async function idbGet(k){try{const db=await idb();return await new Promise(r=>{const q=db.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})}catch(e){return null}}
@@ -252,8 +259,12 @@ function surahHead(s){
   if(s!==1&&s!==9){h+=`<div class="bsm" data-qfb="1">${BISM}</div>`;if(mv&&m&&m.bism)h+=`<div class="bsmm">${esc(m.bism)}</div>`}
   return h;
 }
-function mealTxt(i,m){m=m||curMeal();if(MERGED[i]){const g=MERGED[i];return m&&m.arr[gi(g[0],g[1])]?'('+g[0]+':'+g[1]+'–'+g[2]+') '+m.arr[gi(g[0],g[1])]:''}return m&&m.arr[i]?m.arr[i]:''}
-function mealOf(i){if(MERGED[i]){const g=MERGED[i];return `<span class="merged">↑ ${g[0]}:${g[1]}–${g[2]}</span>`}const x=mealTxt(i);return x?esc(x):`<span class="nomeal">${MEALS_LOADED?t('noMeal'):t('loading')}</span>`}
+function mealTxt(i,m){m=m||curMeal();if(!m)return '';const g=m.mg[i];if(g){return m.arr[gi(g[0],g[1])]?'('+g[0]+':'+g[1]+'–'+g[2]+') '+m.arr[gi(g[0],g[1])]:''}return m.arr[i]||''}
+function mealOf(i){const m=curMeal();if(!m)return `<span class="nomeal">${t('loading')}</span>`;
+  const g=m.mg[i];if(g)return `<span class="merged">↑ ${g[0]}:${g[1]}–${g[2]}</span>`;
+  if(m.miss.has(i))return `<span class="nomeal">${t('notPrinted')}</span>`;
+  const x=mealTxt(i,m);if(!x)return `<span class="nomeal">${MEALS_LOADED?t('noMeal'):t('loading')}</span>`;
+  const fn=m.notes[i];return esc(x)+(fn&&fn.length?`<details class="fnd"><summary>${t('fnotes')} (${fn.length})</summary><ol>${fn.map(n=>`<li>${esc(n)}</li>`).join('')}</ol></details>`:'')}
 function cls(i){return (i===SEL?' sel':'')+(MSEL&&MSEL.has(i)?' ms':'')+(PL.cur===i?' pl':'')}
 function pageBody(pg){
   const a=PFIRST[pg],b=PFIRST[pg+1];let body='';
@@ -456,7 +467,8 @@ function renderHelp(){const fq=t('faqL'),hk=t('keys');
   ${kunyeHTML()}
   <h3>${t('contact')}</h3><div class="card">${CONTACT_EMAIL?`<a href="mailto:${esc(CONTACT_EMAIL)}">${esc(CONTACT_EMAIL)}</a>`:`<span class="muted">${t('contactNone')}</span>`}</div>
   <div class="btns" style="justify-content:flex-start;margin-top:16px"><button class="btn d" data-act="wipe">${ic('trash',16)} ${t('wipe')}</button></div>`}
-function kunyeHTML(){return `<h3>${esc(L(KUNYE.title))}</h3><div class="card kunye">${KUNYE.lines.map(l=>`<div class="kl"><span class="muted">${esc(l[0])}</span><span>${esc(l[1])}</span></div>`).join('')}</div>`}
+function kunyeHTML(){const one=(title,lines)=>`<h3>${esc(title)}</h3><div class="card kunye">${lines.map(l=>`<div class="kl"><span class="muted">${esc(l[0])}</span><span>${esc(l[1])}</span></div>`).join('')}</div>`;
+  return one(L(KUNYE.title),KUNYE.lines)+EXTRA_MEALS.map(x=>one(x.name,x.kunye)).join('')}
 function renderIntro(){const tx=INTRO[S.lang]||INTRO.mn;
   $('v-intro').innerHTML=`<h2>${t('intro')}</h2><div class="card"><div class="ar" style="text-align:center;text-align-last:center;font-size:34px;color:var(--pri)">${BISM}</div>${tx.map(p=>`<h4 class="ih">${esc(p[0])}</h4><p class="mt">${esc(p[1])}</p>`).join('')}</div>
   ${kunyeHTML()}
@@ -526,7 +538,7 @@ function renderCap(){const el=$('plcap');if(!el)return;
   const i=PL.cur;let txt='';if(PL.open&&S.cap&&i>=0){const m=curMeal();txt=PL.inBism?(m&&m.bism)||'':mealTxt(i)}
   if(!txt){el.classList.remove('on');el.innerHTML='';el.dataset.k='';return}
   const [s,a]=sa(i);const k=(PL.inBism?'b':'')+i;
-  if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="cref">${PL.inBism?'بِسۡمِ ٱللَّهِ':`${esc(sn(s))} ${s}:${a}`}</div><div class="ctx" lang="mn">${esc(txt)}</div>`;el.scrollTop=0;
+  if(el.dataset.k!==k){el.dataset.k=k;el.innerHTML=`<div class="cref">${PL.inBism?'بِسۡمِ ٱللَّهِ':`${esc(sn(s))} ${s}:${a}`}</div><div class="ctx" lang="${(curMeal()||{}).lang||'mn'}">${esc(txt)}</div>`;el.scrollTop=0;
     el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash')}
   el.classList.add('on')}
 function renderPlayer(){const el=$('player');if(!el)return;if(!PL.playing&&!PL.open)FPAUSE=false;renderFback();
@@ -626,11 +638,12 @@ function settingsModal(){
   <div class="muted" style="font-size:13px;margin:12px 0 6px">${t('afont')}</div><select id="fontSel" style="width:100%">${Object.keys(FONTN).filter(k=>k!=='qcf'||QCF_OK).map(k=>`<option value="${k}"${S.font===k?' selected':''}>${FONTN[k]}</option>`).join('')}</select>
   ${QCF_OK?`<div style="margin-top:12px"><div class="muted" style="font-size:13px;margin-bottom:6px">${t('qcfL')}</div>${tog('qcf')}</div>`:''}
   <div class="cols" style="margin-top:12px"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('dblp')}</div>${tog('dbl')}</div><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('flip')}</div>${tog('flip')}</div></div>
-  <div class="lbl">${t('meal')}</div><div class="cols"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('mfs')}</div><div class="step"><button data-st="mfs:-1">−</button><span>${S.mfs}px</span><button data-st="mfs:1">+</button></div></div>
+  <div class="lbl">${t('meal')}</div><select id="mealSel" style="width:100%;margin-bottom:10px">${mealChoices().map(c=>`<option value="${c[0]}"${(curMealId()===c[0])?' selected':''}>${esc(c[1])}</option>`).join('')}</select><div class="cols"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('mfs')}</div><div class="step"><button data-st="mfs:-1">−</button><span>${S.mfs}px</span><button data-st="mfs:1">+</button></div></div>
 </div>
   <div class="btns" style="justify-content:space-between"><button class="btn s" data-act="backup">${ic('sv',16)} ${t('backup')}</button><button class="btn s" data-act="reset">${t('reset')}</button></div>
   <div class="btns" style="justify-content:flex-start"><button class="btn d" data-act="wipe">${ic('trash',16)} ${t('wipe')}</button></div>`);
   $('fontSel').onchange=e=>{S.font=e.target.value;applySet();if(VIEW==='read')renderPage()};
+  $('mealSel').onchange=e=>{S.meal=e.target.value;applySet();if(EXTRA_MEALS.some(x=>x.id===S.meal))loadMeal(S.meal);rerenderMeal()};
 }
 function copyModal(){
   const hasSel=MSEL&&MSEL.size||SEL>=0;const lab=MSEL&&MSEL.size?`${MSEL.size} ${t('nsel')}`:SEL>=0?sa(SEL).join(':'):'';
@@ -705,6 +718,7 @@ let FILEMODE='backup';
 /* ---------- events ---------- */
 let LASTCLICK={i:-1,t:0};
 document.addEventListener('click',e=>{
+  if(e.target.closest('details.fnd'))return;   /* dipnot kutusu: âyet menüsünü açmasın */
   const k=e.target.closest('[data-key]');if(k){kbKey(k.dataset.kb,k.dataset.key);return}
   const kl=e.target.closest('[data-kbl]');if(kl){const id=kl.dataset.kb;const box=$(id);box.outerHTML=kbHTML(id,kl.dataset.kbl);$(id).classList.add('on');return}
   const ko=e.target.closest('[data-kbopen]');if(ko){$(ko.dataset.kbopen).classList.toggle('on');return}
@@ -835,7 +849,7 @@ addEventListener('beforeinstallprompt',e=>{e.preventDefault();DEFERRED_INSTALL=e
 let MEALS_LOADED=false;
 applySet();buildChrome();route();
 const ld=$('boot');if(ld)ld.remove();
-getJSON('meals').then(arr=>{for(const m of (Array.isArray(arr)?arr:[]))if(m&&Array.isArray(m.arr)&&m.arr.length===N){MEALS.push({id:m.id,name:m.name,lang:m.lang||'mn',arr:m.arr,bism:m.bism||'',src:'emb'});for(const g of (m.merged||[])){const a=gi(g[0],g[1]);for(let x=g[1]+1;x<=g[2];x++)MERGED[gi(g[0],x)]=[g[0],g[1],g[2]]}}}).catch(()=>{}).then(()=>{
+getJSON('meals').then(arr=>{for(const m of (Array.isArray(arr)?arr:[]))if(m&&Array.isArray(m.arr)&&m.arr.length===N)addMeal(m,'emb')}).catch(()=>{}).then(()=>{if(EXTRA_MEALS.some(e=>e.id===S.meal))loadMeal(S.meal);
   MEALS_LOADED=true;if(VIEW==='read'||VIEW==='home'||VIEW==='search')show(VIEW)});
 if('serviceWorker' in navigator&&!INL&&/^https?:/.test(location.protocol)){navigator.serviceWorker.register('sw.js').catch(()=>{})}
 })().catch(err=>{const b=document.getElementById('boot');if(b)b.textContent='Error: '+err.message;console.error(err)});

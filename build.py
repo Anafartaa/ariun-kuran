@@ -11,6 +11,7 @@ def js(o): return json.dumps(o, ensure_ascii=False, separators=(',', ':')).repla
 
 quran = json.load(open(DATA/'quran.json', encoding='utf-8'))
 meals = json.load(open(DATA/'meals.json', encoding='utf-8'))
+extra = {p.stem: json.load(open(p, encoding='utf-8')) for p in sorted(DATA.glob('meal-*.json'))}  # seçilince yüklenen ek mealler
 css = rd(SRC/'style.css')
 tpl = rd(SRC/'template.html').replace('/*CSS*/', css)
 app, content = rd(SRC/'app.js'), rd(SRC/'content.js')
@@ -19,7 +20,7 @@ app = app.replace('/*@ELIFBA@*/', rd(SRC/'elifba.js'))  # Elifba modülü uygula
 # ---------- site/ ----------
 if SITE.exists(): shutil.rmtree(SITE)
 (SITE/'data').mkdir(parents=True); (SITE/'icons').mkdir()
-for name, obj in [('quran', quran), ('meals', meals)]:
+for name, obj in [('quran', quran), ('meals', meals)] + list(extra.items()):
     open(SITE/'data'/f'{name}.json', 'w', encoding='utf-8').write(js(obj))
 open(SITE/'app.js', 'w', encoding='utf-8').write(app)
 open(SITE/'content.js', 'w', encoding='utf-8').write(content)
@@ -44,7 +45,7 @@ shutil.copy(SRC/'netlify.toml', SITE/'netlify.toml'); shutil.copy(SRC/'_headers'
 
 # ---------- preview/ (tek dosya, claude.ai önizlemesi için) ----------
 PREV.mkdir(exist_ok=True)
-inline = f'<script>window.__INLINE__={{quran:{js(quran)},meals:{js(meals)}}};</script>\n<script>\n{content}\n</script>\n<script>\n{app}\n</script>'
+inline = f'<script>window.__INLINE__={{quran:{js(quran)},meals:{js(meals)}' + ''.join(f',"{k}":{js(v)}' for k, v in extra.items()) + f'}};</script>\n<script>\n{content}\n</script>\n<script>\n{app}\n</script>'
 ph = tpl.replace('<!--PWA-->', '').replace('<!--INLINE-->', inline).replace('<script src="content.js"></script>\n', '').replace('<script src="app.js"></script>\n', '')
 open(PREV/'index.html', 'w', encoding='utf-8').write(ph)
 tot = sum(f.stat().st_size for f in SITE.rglob('*') if f.is_file())

@@ -69,6 +69,17 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
 - Kökte `KAPALI` dosyası varken iş akışı siteyi `kapali/` (boş sayfa + önbellek temizleyen sw.js) ile değiştirir. Yeniden açmak: `KAPALI`'yı sil, push.
 - Depo GitHub'da herkese açıktı (meals.json dahil); gizli yapmak kullanıcının adımı (Settings → Change visibility → Private).
 
+## v9: Kazakça ve Kırgızca meal (13.11.2026)
+- Kaynak: kullanıcının verdiği Diyanet PDF'leri — Kazakça (Ankara 2015, ISBN 978-975-19-6377-2), Kırgızca (İstanbul 2016, ISBN 978-975-19-6631-5).
+  PDF'ler depoya konmaz. Veri: `data/meal-kk.json`, `data/meal-ky.json` ({arr, bism, merged, miss, notes, kunye}); seçilince yüklenir (`loadMeal`).
+  Künye ve etiketler `content.js` → `EXTRA_MEALS`. Ayarlarda «Meal» seçici (`#mealSel`, `S.meal`).
+- Birleşik/eksik/dipnot her meale ayrı (`m.mg`, `m.miss`, `m.notes`; eski global `MERGED` kaldırıldı). Kırgızca 4590 dipnot ayet altında `details.fnd`.
+- Ayrıştırma (scratchpad betikleri, depoda değil): PyMuPDF; metin 8.4–9.6 pt, ayet no satır başı + sekme, dipnot işareti <6.2 pt (ayıklanır),
+  heceleme tiresi: kelime başka yerde satır ortasında tireli geçmiyorsa birleştirilir.
+- Kazakça PDF dizgi hataları (metin eklenmedi): 12:23 ve 54:6 iki kez basılmış (ikincisi atıldı); 21:23 "22." basılmış; 21:58 "558." basılmış;
+  7:199 numarası cümle içinde; 96:3, 106:3, 108:3 "З."; 5:28 ve 26:144 numarası yok (metni önceki ayette, birleşik gösterilir);
+  **77:15 basılı mealde yok** (`miss`, «basılı mealde yok» yazar). PDF'te 69 birlikte çevrilmiş ayet grubu (N-M. / N-M-K.).
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.
