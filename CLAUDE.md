@@ -80,6 +80,13 @@ Birebir kopya değil, daha iyisi isteniyor. Diyanet logosu ve adı kullanılmıy
   7:199 numarası cümle içinde; 96:3, 106:3, 108:3 "З."; 5:28 ve 26:144 numarası yok (metni önceki ayette, birleşik gösterilir);
   **77:15 basılı mealde yok** (`miss`, «basılı mealde yok» yazar). PDF'te 69 birlikte çevrilmiş ayet grubu (N-M. / N-M-K.).
 
+## v10: Kazakça ve Kırgızca arayüz (13.11.2026)
+- Arayüz dilleri: mn, tr, en, **kk, ky** (`LANGS`, `LANGN`). Çeviriler `i18n/kk.json`, `i18n/ky.json` (Claude'un çevirisi; anadili konuşanın gözden geçirmesi önerilir):
+  `T` (arayüz anahtarları), `L3` (content.js Türkçe metni → çeviri), `topics` (Türkçe konu adı → çeviri), `intro`, `recit`, `lname`, `sn` (sure adları).
+  build.py bunları `const I18X=` olarak content.js'in başına gömer; `L3` kk/ky alanlarını I18X'ten doldurur; eksikte İngilizceye düşer.
+- Sure adları kk/ky: o dilin Diyanet meal PDF'indeki başlıklardan (Kırgızca 6. sure PDF'te Latin harflerle dizilmiş, Kiril'e çevrildi).
+- Arayüz kk/ky iken meal seçilmemişse o dilin meali gelir (`curMeal`). Kazakça 77:15 (basılı mealde yok) boş gösterilir.
+
 ## Ses ve izinler (10.11.2026)
 - Kural: yalnızca kullanım izni açıkça yazılı kayıtlar. Dayanak: alquran.cloud şartları §IV (son güncelleme 14.06.2026):
   kayıtlar hafızlar/vârislerince ücretsiz, ticari olmayan yeniden dağıtım için lisanslı; akış/gömme/indirme serbest.

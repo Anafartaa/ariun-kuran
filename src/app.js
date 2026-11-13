@@ -20,6 +20,7 @@ const M=(...a)=>a.filter(x=>x!==''&&x!=null).map(x=>`<span>${x}</span>`).join(''
 const NM={mn:"Фатиха|Бакара|Али Имран|Ниса|Майда|Ангам|Аграф|Анфал|Тауба|Юнус|Худ|Юсуф|Рагыд|Ибрахим|Хижр|Нахыл|Исра|Кахф|Мариям|Таха|Анбия|Хаж|Мүминун|Нур|Фуркан|Шугара|Намил|Касас|Ганкабут|Рум|Лукман|Саждэ|Ахзаб|Саба|Фатыр|Ясин|Саффат|Сад|Зүмар|Мүмин|Фуссилат|Шура|Зүхруф|Духан|Жасия|Ахкаф|Мухаммед|Фатх|Хужурат|Каф|Зариат|Тур|Нажим|Камар|Рахман|Уакига|Хадид|Мүжадала|Хашыр|Мүмтахина|Саф|Жума|Мүнафикун|Тагабун|Талак|Тахрим|Мүлк|Калам|Хакка|Магариж|Нух|Жин|Мүззаммил|Мүддассир|Киямет|Инсан|Мүрсалат|Наба|Назигат|Габаса|Такуир|Инфитар|Мутаффифин|Иншикак|Буруж|Тарик|Агла|Гашия|Фажир|Балад|Шамис|Лайл|Духа (Зуха)|Инширах|Тин|Галак|Кадр|Байина|Зилзал|Гадият|Карига|Такасүр|Гасыр|Хүмаза|Фил|Курайш|Магун|Каусар|Кафирун|Насыр|Таббат|Ыхлас|Фалак|Нас".split('|'),
 tr:"Fâtiha|Bakara|Âl-i İmrân|Nisâ|Mâide|En'âm|A'râf|Enfâl|Tevbe|Yûnus|Hûd|Yûsuf|Ra'd|İbrâhîm|Hicr|Nahl|İsrâ|Kehf|Meryem|Tâ-Hâ|Enbiyâ|Hac|Mü'minûn|Nûr|Furkân|Şuarâ|Neml|Kasas|Ankebût|Rûm|Lokmân|Secde|Ahzâb|Sebe'|Fâtır|Yâsîn|Sâffât|Sâd|Zümer|Mü'min|Fussilet|Şûrâ|Zuhruf|Duhân|Câsiye|Ahkâf|Muhammed|Fetih|Hucurât|Kâf|Zâriyât|Tûr|Necm|Kamer|Rahmân|Vâkıa|Hadîd|Mücâdele|Haşr|Mümtehine|Saf|Cuma|Münâfikûn|Teğâbün|Talâk|Tahrîm|Mülk|Kalem|Hâkka|Meâric|Nûh|Cin|Müzzemmil|Müddessir|Kıyâme|İnsân|Mürselât|Nebe'|Nâziât|Abese|Tekvîr|İnfitâr|Mutaffifîn|İnşikâk|Bürûc|Târık|A'lâ|Gâşiye|Fecr|Beled|Şems|Leyl|Duhâ|İnşirâh|Tîn|Alak|Kadir|Beyyine|Zilzâl|Âdiyât|Kâria|Tekâsür|Asr|Hümeze|Fîl|Kureyş|Mâûn|Kevser|Kâfirûn|Nasr|Tebbet|İhlâs|Felak|Nâs".split('|'),
 en:D.en||[]};
+NM.kk=I18X.kk.sn;NM.ky=I18X.ky.sn;
 const T={
 mn:{qcfL:"Хэвлэмэл Мадина мусхафын хуудас (15 мөр)",app:"Ариун Куран",home:"Нүүр",read:"Унших",search:"Хайлт",surahs:"Сурегийн жагсаалт",juzs:"Жузууд",saved:"Хадгалсан",notes:"Тэмдэглэл",help:"Тусламж",settings:"Тохиргоо",
 elifba:"Элифба",dict:"Кураны толь",topics:"Сэдвийн жагсаалт",intro:"Удиртгал",
@@ -115,7 +116,8 @@ faqL:[["Where are my notes stored?","Only in this device's browser. To move them
 helpTx:["Tap a verse to listen, copy, save, share or add a note.","On a computer, double-click a verse to start reading from it.","Hold Ctrl (⌘) to pick several verses, Shift for a range. On phones use «Select verses».","On phones swipe right for the next page and left for the previous one.","Mark each page as read to track your khatm."],
 keys:[["← / →","Next / previous page"],["Space","Play / pause"],["/","Search"],["Esc","Close dialogs"]]}
 };
-['mn','tr','en'].forEach(l=>{T[l].sentAt=T[l].sentAt??''});
+for(const l of ['kk','ky'])T[l]=Object.assign({},T.en,I18X[l].T);
+['mn','tr','en','kk','ky'].forEach(l=>{T[l].sentAt=T[l].sentAt??''});
 
 /* ---------- storage ---------- */
 const LS={get(k,d){try{const v=localStorage.getItem('qk_'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('qk_'+k,JSON.stringify(v))}catch(e){}}};
@@ -144,9 +146,9 @@ function addMeal(m,src){const mg={};for(const g of (m.merged||[]))for(let x=g[1]
 function loadMeal(id){const x=EXTRA_MEALS.find(e=>e.id===id);if(!x||MLOAD[id]||MEALS.some(m=>m.id===id))return;
   MLOAD[id]=getJSON('meal-'+id).then(m=>{if(m&&Array.isArray(m.arr)&&m.arr.length===N){addMeal(m,'emb');IML[id]=null}}).catch(()=>{toast(t('mealErr'))}).then(()=>{delete MLOAD[id];rerenderMeal()})}
 function rerenderMeal(){if(VIEW==='read')renderPage();else if(VIEW==='home'||VIEW==='search')show(VIEW);renderCap()}
-const mealChoices=()=>[['mn',(MEALS.find(m=>m.id==='mn')||{name:'Монгол'}).name]].concat(EXTRA_MEALS.map(x=>[x.id,L(x.label)+' — '+x.name]));
-const curMealId=()=>MEALS.some(m=>m.id===S.meal)||EXTRA_MEALS.some(e=>e.id===S.meal)?S.meal:'mn';
-const curMeal=()=>{const m=MEALS.find(m=>m.id===S.meal);if(m)return m;if(EXTRA_MEALS.some(e=>e.id===S.meal)){loadMeal(S.meal);return null}return MEALS.find(m=>m.lang===S.lang)||MEALS[0]||null};
+const mealChoices=()=>[['mn',(MEALS.find(m=>m.id==='mn')||{name:'Монгол'}).name]].concat(EXTRA_MEALS.map(x=>[x.id,L(x.label)===x.name?x.name:L(x.label)+' — '+x.name]));
+const curMealId=()=>{const id=S.meal||(EXTRA_MEALS.some(e=>e.id===S.lang)?S.lang:'');return MEALS.some(m=>m.id===id)||EXTRA_MEALS.some(e=>e.id===id)?id:'mn'};
+const curMeal=()=>{const id=S.meal||(EXTRA_MEALS.some(e=>e.id===S.lang)?S.lang:'');const m=MEALS.find(m=>m.id===id);if(m)return m;if(EXTRA_MEALS.some(e=>e.id===id)){loadMeal(id);return null}return MEALS.find(m=>m.lang===S.lang)||MEALS[0]||null};
 let IML={};
 function idb(){return new Promise((res,rej)=>{try{const r=indexedDB.open('qk',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)}catch(e){rej(e)}})}
 async function idbGet(k){try{const db=await idb();return await new Promise(r=>{const q=db.transaction('kv').objectStore('kv').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})}catch(e){return null}}
@@ -173,7 +175,8 @@ function applySet(){
 
 /* ---------- chrome ---------- */
 const NAVS=[['home','home'],['read','book'],['search','search'],['surahs','list'],['juz','layers'],null,['elifba','abc'],['topics','tag'],['intro','info'],null,['saved','star'],['notes','note'],['help','help']];
-const LANGL={mn:'MN',tr:'TR',en:'EN'};
+const LANGL={mn:'MN',tr:'TR',en:'EN',kk:'KK',ky:'KY'};
+const LANGS=['mn','tr','en','kk','ky'],LANGN={mn:'Монгол',tr:'Türkçe',en:'English',kk:'Қазақша',ky:'Кыргызча'};
 function buildChrome(){
   document.querySelectorAll('[data-t]').forEach(e=>e.textContent=t(e.dataset.t));
   document.title=t('app');
@@ -262,7 +265,7 @@ function surahHead(s){
 function mealTxt(i,m){m=m||curMeal();if(!m)return '';const g=m.mg[i];if(g){return m.arr[gi(g[0],g[1])]?'('+g[0]+':'+g[1]+'–'+g[2]+') '+m.arr[gi(g[0],g[1])]:''}return m.arr[i]||''}
 function mealOf(i){const m=curMeal();if(!m)return `<span class="nomeal">${t('loading')}</span>`;
   const g=m.mg[i];if(g)return `<span class="merged">↑ ${g[0]}:${g[1]}–${g[2]}</span>`;
-  if(m.miss.has(i))return `<span class="nomeal">${t('notPrinted')}</span>`;
+  if(m.miss.has(i))return '';   /* basılı mealde olmayan âyet: boş */
   const x=mealTxt(i,m);if(!x)return `<span class="nomeal">${MEALS_LOADED?t('noMeal'):t('loading')}</span>`;
   const fn=m.notes[i];return esc(x)+(fn&&fn.length?`<details class="fnd"><summary>${t('fnotes')} (${fn.length})</summary><ol>${fn.map(n=>`<li>${esc(n)}</li>`).join('')}</ol></details>`:'')}
 function cls(i){return (i===SEL?' sel':'')+(MSEL&&MSEL.has(i)?' ms':'')+(PL.cur===i?' pl':'')}
@@ -461,7 +464,7 @@ function renderHelp(){const fq=t('faqL'),hk=t('keys');
   <h3>${t('usage')}</h3><div class="card help"><ul>${t('helpTx').map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
   <h3>${t('faq')}</h3><div class="card">${fq.map(q=>`<details class="faq"><summary>${esc(q[0])}</summary><p class="mt">${esc(q[1])}</p></details>`).join('')}</div>
   <h3>${t('shortcuts')}</h3><div class="card">${hk.map(k=>`<div class="sgn" style="padding:6px 0"><kbd>${k[0]}</kbd><span>${esc(k[1])}</span></div>`).join('')}</div>
-  <h3>${t('readers')}</h3><div class="card">${RECITERS.map(r=>`<div class="sgn" style="padding:6px 0">${ic('head',16)}<span>${esc(r[S.lang==='tr'?2:S.lang==='en'?3:1])}</span></div>`).join('')}</div>
+  <h3>${t('readers')}</h3><div class="card">${RECITERS.map(r=>`<div class="sgn" style="padding:6px 0">${ic('head',16)}<span>${esc(recLbl(r))}</span></div>`).join('')}</div>
   <h3>${t('meals')}</h3><div class="card"><p class="mt" style="margin:0 0 10px">${MEALS.length?MEALS.map(m=>esc(m.name)).join(', '):t('noMeal')}</p><button class="btn s" data-act="backup">${ic('sv',16)} ${t('backup')}</button></div>
   <h3>${t('src')}</h3><div class="card"><ul class="muted" style="margin:0;padding-left:18px;font-size:13px">${t('srcList').map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
   ${kunyeHTML()}
@@ -485,7 +488,7 @@ function refLabel(spec){return spec.split(',').map(p=>{const m=p.match(/^(\d+):(
 
 /* ---------- topics (fihrist) ---------- */
 let TOPIC=null;
-const tName=tp=>tp[S.lang==='tr'?1:S.lang==='en'?2:0];
+const tName=tp=>(S.lang==='kk'||S.lang==='ky')?(I18X[S.lang].topics[tp[1]]||tp[2]):tp[S.lang==='tr'?1:S.lang==='en'?2:0];
 function renderTopics(){
   if(!TOPIC){const q=nLat(SF.tq||'');
     $('v-topics').innerHTML=`<h2>${t('topics')}</h2><div class="filters"><input id="tq" placeholder="${t('search')}…" value="${esc(SF.tq||'')}"></div><div id="tgrid"></div>`;
@@ -501,7 +504,8 @@ function renderTopics(){
 const AU=new Audio();AU.preload='auto';const PRE=new Audio();PRE.preload='auto';
 const PL={queue:[],pos:0,playing:false,cur:-1,inBism:false,ayCnt:0,rgCnt:0,open:false,err:0};
 const recOf=id=>RECITERS.find(x=>x[0]===(REC_OLD[id]||id))||RECITERS[0];
-const recName=id=>recOf(id)[S.lang==='tr'?2:S.lang==='en'?3:1];
+const recLbl=r=>(S.lang==='kk'||S.lang==='ky')?(I18X[S.lang].recit[RECITERS.indexOf(r)]||r[3]):r[S.lang==='tr'?2:S.lang==='en'?3:1];
+const recName=id=>recLbl(recOf(id));
 const ayURL=(i,rec)=>{const r=recOf(rec||S.rec);return `https://cdn.islamic.network/quran/audio/${r[4]}/${r[0]}/${i+1}.mp3`};
 const repN=v=>v==='inf'?Infinity:(+v||1);
 function buildQueue(from){let end;if(S.range==='page'){const lastPg=isDbl()&&P[from]%2===1?P[from]+1:P[from];end=PFIRST[Math.min(605,lastPg+1)]}else if(S.range==='surah'){end=START[SUR[from]]+C[SUR[from]]}else end=N;
@@ -560,7 +564,7 @@ function renderPlayer(){const el=$('player');if(!el)return;if(!PL.playing&&!PL.o
   <div class="plprog"><i id="plbar"></i></div>
   <div class="plctl"><button class="ib" data-act="plPrev" aria-label="${t('prev')}">${ic('nextT')}</button><button class="ib big" data-act="plToggle" aria-label="${t('play')}">${ic(PL.playing?'pause':'play',26)}</button><button class="ib" data-act="plNext" aria-label="${t('next')}">${ic('prevT')}</button></div>
   <div class="plopts">
-  <label>${t('reciter')}<select id="plRec">${RECITERS.map(r=>`<option value="${r[0]}"${recOf(S.rec)[0]===r[0]?' selected':''}>${esc(r[S.lang==='tr'?2:S.lang==='en'?3:1])}</option>`).join('')}</select></label>
+  <label>${t('reciter')}<select id="plRec">${RECITERS.map(r=>`<option value="${r[0]}"${recOf(S.rec)[0]===r[0]?' selected':''}>${esc(recLbl(r))}</option>`).join('')}</select></label>
   <label>${t('speed')}<select id="plRate">${[0.5,0.75,1,1.25,1.5,2].map(v=>`<option value="${v}"${+S.rate===v?' selected':''}>${v}x</option>`).join('')}</select></label>
   <label>${t('rangeT')}<select id="plRange">${[['page','rgPage'],['surah','rgSurah'],['all','rgAll']].map(o=>`<option value="${o[0]}"${S.range===o[0]?' selected':''}>${t(o[1])}</option>`).join('')}</select></label>
   <label>${t('repAyah')}<select id="plRepA">${reps.map(v=>`<option value="${v}"${String(S.repA)===v?' selected':''}>${repLab(v)}</option>`).join('')}</select></label>
@@ -620,7 +624,7 @@ function openSheet(i){
 function modal(html){$('modal').innerHTML=html;openOv();$('modal').classList.add('on')}
 function moreMenu(){
   modal(`<div class="hd"><b>${t('app')}</b><button class="ib" data-act="close">${ic('x')}</button></div>
-  <div class="seg" style="display:flex;margin-bottom:12px">${['mn','tr','en'].map(l=>`<button data-lg="${l}" class="${S.lang===l?'on':''}" style="flex:1">${{mn:'Монгол',tr:'Türkçe',en:'English'}[l]}</button>`).join('')}</div>
+  <div class="seg langs" style="display:flex;margin-bottom:12px">${LANGS.map(l=>`<button data-lg="${l}" class="${S.lang===l?'on':''}" style="flex:1">${LANGN[l]}</button>`).join('')}</div>
   <div class="mgrid">
   <button data-act="bmNow">${ic('bm')}<span>${t('bmHere')}</span></button><button data-act="saveMenu">${ic('star')}<span>${t('saveT')}</span></button>
   <button data-go="saved">${ic('star')}<span>${t('saved')}</span></button><button data-go="notes">${ic('note')}<span>${t('notes')}</span></button>
@@ -631,7 +635,7 @@ function settingsModal(){
   const th=[['light','#fffaf0'],['dark','#151d19'],['sepia','#f5e9cf'],['classic','#0b4a3b']];
   const tog=(k)=>`<div class="seg" style="display:flex"><button data-tg="${k}:1" class="${S[k]?'on':''}" style="flex:1">${t('on')}</button><button data-tg="${k}:0" class="${!S[k]?'on':''}" style="flex:1">${t('off')}</button></div>`;
   modal(`<div class="hd"><b>${t('settings')}</b><button class="ib" data-act="close">${ic('x')}</button></div>
-  <div class="lbl">${t('lang')}</div><div class="seg" style="display:flex">${['mn','tr','en'].map(l=>`<button data-lg="${l}" class="${S.lang===l?'on':''}" style="flex:1">${{mn:'Монгол',tr:'Türkçe',en:'English'}[l]}</button>`).join('')}</div>
+  <div class="lbl">${t('lang')}</div><div class="seg langs" style="display:flex">${LANGS.map(l=>`<button data-lg="${l}" class="${S.lang===l?'on':''}" style="flex:1">${LANGN[l]}</button>`).join('')}</div>
   <div class="lbl">${t('theme')}</div><div class="themes">${th.map(x=>`<button data-th="${x[0]}" class="${S.theme===x[0]?'on':''}"><span class="sw" style="background:${x[1]}"></span>${t(x[0])}</button>`).join('')}</div>
   <div class="lbl">${t('quran')}</div><div class="cols"><div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('afs')}</div><div class="step"><button data-st="fs:-10">−</button><span>${S.fs}%</span><button data-st="fs:10">+</button></div></div>
   <div><div class="muted" style="font-size:13px;margin-bottom:6px">${t('alh')}</div><div class="step"><button data-st="lh:-0.1">−</button><span>${(+S.lh).toFixed(1)}</span><button data-st="lh:0.1">+</button></div></div></div>
@@ -815,7 +819,7 @@ $('savedB').onclick=saveMenu;
 $('notesB').onclick=()=>show('notes');
 $('bmB').onclick=()=>{BM={p:PAGE,i:SEL>=0&&onPage(SEL)?SEL:PFIRST[PAGE]};LS.set('bm',BM);toast(t('bmSet'));if(VIEW==='read')renderPage();else syncSel()};
 $('copyB').onclick=copyModal;$('setB').onclick=settingsModal;
-$('langB').onclick=()=>{S.lang={mn:'tr',tr:'en',en:'mn'}[S.lang];applySet();rerender()};
+$('langB').onclick=()=>{S.lang=LANGS[(LANGS.indexOf(S.lang)+1)%LANGS.length];applySet();rerender()};
 function toggleFS(){try{if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen().catch(()=>{})}catch(e){}}
 $('fsB').onclick=toggleFS;
 function setView(v){S.view=v;applySet();document.querySelectorAll('#viewSeg button').forEach(x=>x.classList.toggle('on',x.dataset.v===v));$('selV').value=v;if(VIEW==='read')renderPage();else goPage(PAGE)}
@@ -849,7 +853,7 @@ addEventListener('beforeinstallprompt',e=>{e.preventDefault();DEFERRED_INSTALL=e
 let MEALS_LOADED=false;
 applySet();buildChrome();route();
 const ld=$('boot');if(ld)ld.remove();
-getJSON('meals').then(arr=>{for(const m of (Array.isArray(arr)?arr:[]))if(m&&Array.isArray(m.arr)&&m.arr.length===N)addMeal(m,'emb')}).catch(()=>{}).then(()=>{if(EXTRA_MEALS.some(e=>e.id===S.meal))loadMeal(S.meal);
+getJSON('meals').then(arr=>{for(const m of (Array.isArray(arr)?arr:[]))if(m&&Array.isArray(m.arr)&&m.arr.length===N)addMeal(m,'emb')}).catch(()=>{}).then(()=>{{const id=S.meal||S.lang;if(EXTRA_MEALS.some(e=>e.id===id))loadMeal(id)}
   MEALS_LOADED=true;if(VIEW==='read'||VIEW==='home'||VIEW==='search')show(VIEW)});
 if('serviceWorker' in navigator&&!INL&&/^https?:/.test(location.protocol)){navigator.serviceWorker.register('sw.js').catch(()=>{})}
 })().catch(err=>{const b=document.getElementById('boot');if(b)b.textContent='Error: '+err.message;console.error(err)});

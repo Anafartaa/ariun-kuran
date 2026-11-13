@@ -487,3 +487,7 @@ body.plopen .wrap{padding-bottom:300px}
 .fnd summary::before{content:"＋";font-weight:400}
 .fnd[open] summary::before{content:"－"}
 .fnd ol{margin:6px 0 2px;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+
+/* dil seçici: beş dil telefonda iki satıra sarar */
+.seg.langs{flex-wrap:wrap}
+.seg.langs button{flex:1 1 30%!important;min-width:0}

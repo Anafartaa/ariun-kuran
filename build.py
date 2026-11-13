@@ -15,6 +15,8 @@ extra = {p.stem: json.load(open(p, encoding='utf-8')) for p in sorted(DATA.glob(
 css = rd(SRC/'style.css')
 tpl = rd(SRC/'template.html').replace('/*CSS*/', css)
 app, content = rd(SRC/'app.js'), rd(SRC/'content.js')
+i18x = {p.stem: json.load(open(p, encoding='utf-8')) for p in sorted((R/'i18n').glob('*.json'))}
+content = '/* Kazakça/Kırgızca arayüz (i18n/*.json) */\nconst I18X=' + js(i18x) + ';\n' + content
 app = app.replace('/*@ELIFBA@*/', rd(SRC/'elifba.js'))  # Elifba modülü uygulamanın içine eklenir
 
 # ---------- site/ ----------

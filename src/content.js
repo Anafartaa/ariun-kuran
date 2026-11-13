@@ -1,5 +1,5 @@
 /* ---- static content: topics (fihrist), elifba lessons, intro, help, reciters ---- */
-const L3=(mn,tr,en)=>({mn,tr,en});
+const L3=(mn,tr,en)=>({mn,tr,en,kk:(I18X.kk.L3[tr]||en),ky:(I18X.ky.L3[tr]||en)});
 /* Fihrist: categories → [mn, tr, en, refs] */
 const TOPICS=[
 {c:L3("Итгэл үнэмшил","İman","Faith"),t:[
@@ -233,3 +233,6 @@ noAudio:L3("Үсгийн аудио бичлэг алга","Harf ses kaydı yok"
 const EXTRA_MEALS=[
 {id:'kk',lang:'kk',name:"Қазақша аударма",label:L3("Казах орчуулга","Kazakça meal","Kazakh translation"),kunye:[["Баспа / Yayın", "Түркия Діни істер басқармасы баспалары / Diyanet İşleri Başkanlığı Yayınları: 1120; Библиографиялық кітаптар / Kaynak Eserler: 96"], ["Қазақша аудармасын дайындағандар / Çeviriyi hazırlayanlar", "Мұхаммед Шыңғыс Қажы, Ермек Мұхаммедқали"], ["Ғылыми кеңесші / Bilimsel danışman", "Ержан Қажы Малғажыұлы - Қазақстан мұсылмандары діни басқармасының төрағасы, бас мүфтиi"], ["Жоба жетекшісі / Proje başkanı", "Ораз Серікбай Қажы Сатыбалдыұлы"], ["Редакторы / Redaktör", "Имашев Болатбек Қалиұлы"], ["Құран Кәрім мәтінін зерттеу", "Құран Кәрім зерттеу және қыраат кеңесі"], ["ISBN", "978-975-19-6377-2"], ["", "1-басылым, Анкара 2015 · © Діни істер басқармасы"]]},
 {id:'ky',lang:'ky',name:"Ыйык Курандын кыргызча котормосу",label:L3("Киргиз орчуулга","Kırgızca meal","Kyrgyz translation"),kunye:[["Басылма / Yayın", "Дин иштери башкармалыгынын басылмалары / Diyanet İşleri Başkanlığı Yayınları: 1289; Негизги адабияттар / Kaynak Eserler: 150"], ["Котормону даярдагандар / Meali hazırlayanlar", "Абдышүкүр Исмаилов, Дүйшөн Абдылдаев, Садыбакас Доолов, Садык Гавай"], ["Техникалык редакторлор / Son kontrol", "Доц. док. Ферхат Гөкче; Саяс. илим. канд. Козукулов Тимур; Садырбеков Марат; Бегалы уулу Заурбек"], ["ISBN", "978-975-19-6631-5"], ["", "Биринчи басылма, Стамбул 2016 · © Дин иштери башкармалыгы / Diyanet İşleri Başkanlığı"]]}];
+
+/* Kazakça/Kırgızca: Mukaddime, harf adları (I18X'ten) */
+INTRO.kk=I18X.kk.intro;INTRO.ky=I18X.ky.intro;LNAME.kk=I18X.kk.lname;LNAME.ky=I18X.ky.lname;
